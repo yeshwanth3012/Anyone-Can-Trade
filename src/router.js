@@ -8,6 +8,9 @@ import InputForm from "./pages/InputForm";
 import PersonalForm from "./components/PersonalForm";
 import TradingForm from "./components/TradingForm";
 import TradingFormYodha from "./components/TradingFormYodha";
+import AdminLogin from "./pages/AdminLogin";
+import PrivateRoute from "./PrivateRoute";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const AppRoutes = () => (
   <Routes>
@@ -20,6 +23,16 @@ const AppRoutes = () => (
       <Route path="/form/:type" element={<PersonalForm />}/>
       <Route path="/trading-form/mastery" element={<TradingForm />} />
       <Route path="/trading-form/yodha" element={<TradingFormYodha />} />
+      <Route path="/admin/login" element={<AdminLogin />}/>
+            {/* Protected Route */}
+      <Route
+        path="/admin/dashboard"
+        element={
+          <PrivateRoute>
+            <AdminDashboard />
+          </PrivateRoute>
+        }
+      />
     </Route>
   </Routes>
 );
