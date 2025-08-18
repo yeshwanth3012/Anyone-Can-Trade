@@ -28,7 +28,7 @@ const ContactUs = () => {
       <meta name="keywords" content="contact trading mentor, get in touch trading, trading course support, ask trading questions" />
     </Helmet>
       <div>
-      <div className="rounded-lg px-5 flex flex-col gap-4 w-full max-w-[600px] mx-auto bg-[#E3C45D0D] shadow-sm mt-[6rem]">
+      <div className="rounded-lg px-5 flex flex-col gap-4 w-full max-w-[600px] mx-auto bg-[#E3C45D0D] shadow-sm mt-[7rem]">
         <div>
           <h2 className="text-xl font-normal text-center">Personal Details</h2>
         </div>
@@ -94,6 +94,15 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      <div className="text-center py-4">
+      <button
+        style={{ backgroundColor: "rgba(110, 147, 210, 0.47)" }}
+        className="text-[#000000] px-16 md:px-24  py-3 rounded-full font-medium transition text-[1rem] md:text-[1.3rem]"
+        // onClick={() => navigate("/courses")}
+      >
+        Submit
+      </button>
+    </div>
       </div>
     </>
   )

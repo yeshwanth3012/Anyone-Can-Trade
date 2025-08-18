@@ -38,7 +38,7 @@ const pricingData = [
 ];
 
 const Courses = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <>
       <Helmet>
@@ -103,19 +103,25 @@ const Courses = () => {
         {/* Pricing Cards */}
         <div className="w-full max-w-5xl overflow-x-auto mt-4">
           <table className="min-w-[720px] table-fixed border border-gray-300 rounded-md text-left text-[1rem] text-gray-700">
-          <thead className="bg-gray-100 text-black text-[1.3rem]">
-            <tr>
-              <th className="p-4 border-r border-gray-300 font-semibold" style={{ width: "25%" }}>
-                Features
-              </th>
-              <th className="p-4 border-r border-gray-300 font-semibold" style={{ width: "37.5%" }}>
-                ACT Achiever
-              </th>
-              <th className="p-4 font-semibold" style={{ width: "37.5%" }}>
-                ACT Pro
-              </th>
-            </tr>
-          </thead>
+            <thead className="bg-gray-100 text-black text-[1.3rem]">
+              <tr>
+                <th
+                  className="p-4 border-r border-gray-300 font-semibold"
+                  style={{ width: "25%" }}
+                >
+                  Features
+                </th>
+                <th
+                  className="p-4 border-r border-gray-300 font-semibold"
+                  style={{ width: "37.5%" }}
+                >
+                  ACT Achiever
+                </th>
+                <th className="p-4 font-semibold" style={{ width: "37.5%" }}>
+                  ACT Pro
+                </th>
+              </tr>
+            </thead>
             <tbody className="text-[1.2rem]">
               <tr className="border-t border-gray-300">
                 <td className="p-4 border-r border-gray-300 font-medium">
@@ -190,12 +196,18 @@ const Courses = () => {
                   Enroll
                 </td>
                 <td className="p-4 border-r border-gray-300">
-                  <button onClick={()=>navigate("/form/achiever")} className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
+                  <button
+                    onClick={() => navigate("/form/achiever")}
+                    className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition"
+                  >
                     Join Now
                   </button>
                 </td>
                 <td className="p-4">
-                  <button onClick={()=>navigate("/form/pro")} className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
+                  <button
+                    onClick={() => navigate("/form/pro")}
+                    className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition"
+                  >
                     Join Now
                   </button>
                 </td>
@@ -210,8 +222,16 @@ const Courses = () => {
           Note: If we are unable to make you a successful Trader, we will refund
           your money*.
         </p>
-        <div className="fixed bottom-4 right-10 cursor-pointer flex flex-col items-center gap-1 z-50">
-          <img src={whatsApp} className="w-10 h-10" />
+        <div
+          onClick={() =>
+            window.open(
+              "https://wa.me/9392692459?text=Hello%20Admin%2C%20I%20am%20interested%20in%20your%20courses.",
+              "_blank"
+            )
+          }
+          className="fixed bottom-4 right-10 cursor-pointer flex flex-col items-center gap-1 z-50"
+        >
+          <img src={whatsApp} className="w-10 h-10" alt="WhatsApp" />
           <p className="text-[0.8rem] text-black">WhatsApp</p>
         </div>
       </div>

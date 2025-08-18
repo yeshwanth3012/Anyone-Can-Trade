@@ -1,148 +1,78 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp, Edit, Trash2 } from "lucide-react";
+import TradingFormYodha from "../components/TradingFormYodha";
+import TradingForm from "../components/TradingForm";
 
 const dummyUsers = [
   {
     id: 1,
     name: "Ramesh Kumar",
     age: 27,
-    mobile: "+91 7382020707",
     email: "ramesh.kumar@example.com",
-    profession: "Part-time",
-    capital: "5-10 lakhs",
-    monthlyReturn: "5-10 %",
-    experience: "3 years and above",
-    learnedFrom: "Online Paid Course",
-    consistentProfits: "Yes",
-    tradingStyle: "Intraday",
-    mentorshipFee: "Yes",
+    phoneNumber: "+91 7382020707",
+    currency: "INR",
+    amount: 5000,
+    courseType: "ACHIEVER",
+    paymentId: "pay_yodha123",
   },
   {
     id: 2,
     name: "Suresh Verma",
     age: 32,
-    mobile: "+91 9988776655",
     email: "suresh.verma@example.com",
-    profession: "Full-time",
-    capital: "10-20 lakhs",
-    monthlyReturn: "10-15 %",
-    experience: "5 years",
-    learnedFrom: "Self Learning",
-    consistentProfits: "No",
-    tradingStyle: "Swing",
-    mentorshipFee: "No",
+    phoneNumber: "+91 9988776655",
+    currency: "INR",
+    amount: 15000,
+    courseType: "PRO",
+    paymentId: "pay_yodha123",
   },
   {
     id: 3,
     name: "Anita Sharma",
     age: 24,
-    mobile: "+91 9876543210",
     email: "anita.sharma@example.com",
-    profession: "Part-time",
-    capital: "1-5 lakhs",
-    monthlyReturn: "2-5 %",
-    experience: "1 year",
-    learnedFrom: "Mentorship",
-    consistentProfits: "Yes",
-    tradingStyle: "Options",
-    mentorshipFee: "Yes",
+    phoneNumber: "+91 9876543210",
+    currency: "INR",
+    amount: 25000,
+    courseType: "YODHA",
+    paymentId: "pay_yodha123",
+    yodhaForm: {
+      profession: "Salaried",
+      income: "Less than 50K",
+      reason: "Part time trader",
+      style: "Swing",
+      capital: "5 to 10 lakhs",
+      returnRate: "2-5%",
+      experience: "1-3 years",
+      learningMethod: "Paid online courses",
+      consistentProfit: "No",
+      mentorshipFee: "Yes",
+    },
   },
-    {
+  {
     id: 4,
-    name: "Anita Sharma",
-    age: 24,
-    mobile: "+91 9876543210",
-    email: "anita.sharma@example.com",
-    profession: "Part-time",
-    capital: "1-5 lakhs",
-    monthlyReturn: "2-5 %",
-    experience: "1 year",
-    learnedFrom: "Mentorship",
-    consistentProfits: "Yes",
-    tradingStyle: "Options",
-    mentorshipFee: "Yes",
-  },
-    {
-    id: 5,
-    name: "Anita Sharma",
-    age: 24,
-    mobile: "+91 9876543210",
-    email: "anita.sharma@example.com",
-    profession: "Part-time",
-    capital: "1-5 lakhs",
-    monthlyReturn: "2-5 %",
-    experience: "1 year",
-    learnedFrom: "Mentorship",
-    consistentProfits: "Yes",
-    tradingStyle: "Options",
-    mentorshipFee: "Yes",
-  },
-    {
-    id: 6,
-    name: "Anita Sharma",
-    age: 24,
-    mobile: "+91 9876543210",
-    email: "anita.sharma@example.com",
-    profession: "Part-time",
-    capital: "1-5 lakhs",
-    monthlyReturn: "2-5 %",
-    experience: "1 year",
-    learnedFrom: "Mentorship",
-    consistentProfits: "Yes",
-    tradingStyle: "Options",
-    mentorshipFee: "Yes",
-  },
-    {
-    id: 7,
-    name: "Anita Sharma",
-    age: 24,
-    mobile: "+91 9876543210",
-    email: "anita.sharma@example.com",
-    profession: "Part-time",
-    capital: "1-5 lakhs",
-    monthlyReturn: "2-5 %",
-    experience: "1 year",
-    learnedFrom: "Mentorship",
-    consistentProfits: "Yes",
-    tradingStyle: "Options",
-    mentorshipFee: "Yes",
-  },
-    {
-    id: 8,
-    name: "Anita Sharma",
-    age: 24,
-    mobile: "+91 9876543210",
-    email: "anita.sharma@example.com",
-    profession: "Part-time",
-    capital: "1-5 lakhs",
-    monthlyReturn: "2-5 %",
-    experience: "1 year",
-    learnedFrom: "Mentorship",
-    consistentProfits: "Yes",
-    tradingStyle: "Options",
-    mentorshipFee: "Yes",
-  },
-      {
-    id: 9,
-    name: "Anita Sharma",
-    age: 24,
-    mobile: "+91 9876543210",
-    email: "anita.sharma@example.com",
-    profession: "Part-time",
-    capital: "1-5 lakhs",
-    monthlyReturn: "2-5 %",
-    experience: "1 year",
-    learnedFrom: "Mentorship",
-    consistentProfits: "Yes",
-    tradingStyle: "Options",
-    mentorshipFee: "Yes",
+    name: "Vikas Singh",
+    age: 29,
+    email: "vikas.singh@example.com",
+    phoneNumber: "+91 9871112222",
+    currency: "INR",
+    amount: 80000,
+    courseType: "MASTERY",
+    paymentId: "pay_mastery456",
+    masteryForm: {
+      profession: "Salaried",
+      income: "Less than 50K",
+      reason: "Part time trader",
+      style: "Intraday",
+      capital: "Less than 2 lakhs",
+      mentorship: "Yes",
+    },
   },
 ];
-
 const AdminDashboard = () => {
   const [expandedId, setExpandedId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 8;
+  const usersPerPage = 2;
 
   // Pagination
   const totalPages = Math.ceil(dummyUsers.length / usersPerPage);
@@ -173,7 +103,8 @@ const AdminDashboard = () => {
               onClick={() => toggleExpand(user.id)}
             >
               <span className="text-sm sm:text-base font-medium truncate max-w-[200px] sm:max-w-none">
-                User NAME {user.name}
+                {`Name: ${user.name}`} &nbsp;&nbsp;
+                {`Email: ${user.email}`}
               </span>
               <div className="flex items-center gap-2 sm:gap-3">
                 <button className="hover:text-red-600">
@@ -191,56 +122,198 @@ const AdminDashboard = () => {
             </div>
 
             {/* Expanded Content */}
-            {expandedId === user.id && (
-              <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-sm sm:text-[1.1rem]">
-                <div className="space-y-2 sm:space-y-3">
-                  <p>
-                    <span className="font-semibold">Age:</span> {user.age}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Mobile:</span> {user.mobile}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Email:</span> {user.email}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Profession:</span>{" "}
-                    {user.profession}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Capital:</span>{" "}
-                    {user.capital}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Monthly Return:</span>{" "}
-                    {user.monthlyReturn}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Experience:</span>{" "}
-                    {user.experience}
-                  </p>
-                </div>
+            {
+              expandedId === user.id &&
+                (user.courseType === "YODHA" ? (
+                  <>
+                    <div className="mt-4 mb-4 flex flex-col gap-5">
+                      {/* Row 1 */}
+                      <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
+                        <p className="sm:w-[37%]">
+                          <span className="font-semibold">Email:</span>{" "}
+                          {user.email}
+                        </p>
+                        <p className="sm:w-[30%]">
+                          <span className="font-semibold">Age:</span> {user.age}
+                        </p>
+                        <p className="sm:w-[30%]">
+                          <span className="font-semibold">Mobile:</span>{" "}
+                          {user.phoneNumber}
+                        </p>
+                      </div>
 
-                <div className="space-y-2 sm:space-y-3">
-                  <p>
-                    <span className="font-semibold">Learned From:</span>{" "}
-                    {user.learnedFrom}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Profits:</span>{" "}
-                    {user.consistentProfits}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Style:</span>{" "}
-                    {user.tradingStyle}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Fee Ready:</span>{" "}
-                    {user.mentorshipFee}
-                  </p>
-                </div>
-              </div>
-            )}
+                      {/* Row 2 */}
+                      <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
+                        <p className="sm:w-[37%]">
+                          <span className="font-semibold">Payment Id:</span>{" "}
+                          {user.paymentId}
+                        </p>
+                        <p className="sm:w-[30%]">
+                          <span className="font-semibold">Amount:</span>{" "}
+                          {user.amount}
+                        </p>
+                        <p className="sm:w-[30%]">
+                          <span className="font-semibold">Course:</span>{" "}
+                          {user.courseType}
+                        </p>
+                      </div>
+                    </div>
+
+                    <TradingFormYodha form={user.yodhaForm} />
+                  </>
+                ) : user.courseType === "MASTERY" ? (
+                  <>
+                    <div className="mt-4 mb-4 flex flex-col gap-5">
+                      {/* Row 1 */}
+                      <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
+                        <p className="sm:w-[37%]">
+                          <span className="font-semibold">Email:</span>{" "}
+                          {user.email}
+                        </p>
+                        <p className="sm:w-[30%]">
+                          <span className="font-semibold">Age:</span> {user.age}
+                        </p>
+                        <p className="sm:w-[30%]">
+                          <span className="font-semibold">Mobile:</span>{" "}
+                          {user.phoneNumber}
+                        </p>
+                      </div>
+
+                      {/* Row 2 */}
+                      <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
+                        <p className="sm:w-[37%]">
+                          <span className="font-semibold">Payment Id:</span>{" "}
+                          {user.paymentId}
+                        </p>
+                        <p className="sm:w-[30%]">
+                          <span className="font-semibold">Amount:</span>{" "}
+                          {user.amount}
+                        </p>
+                        <p className="sm:w-[30%]">
+                          <span className="font-semibold">Course:</span>{" "}
+                          {user.courseType}
+                        </p>
+                      </div>
+                    </div>
+
+                    <TradingForm form={user.masteryForm} />
+                  </>
+                ) : user.courseType === "ACHIEVER" ? (
+                  <div className="mt-4 mb-4 flex flex-col gap-5">
+                    {/* Row 1 */}
+                    <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
+                      <p className="sm:w-[37%]">
+                        <span className="font-semibold">Email:</span>{" "}
+                        {user.email}
+                      </p>
+                      <p className="sm:w-[30%]">
+                        <span className="font-semibold">Age:</span> {user.age}
+                      </p>
+                      <p className="sm:w-[30%]">
+                        <span className="font-semibold">Mobile:</span>{" "}
+                        {user.phoneNumber}
+                      </p>
+                    </div>
+
+                    {/* Row 2 */}
+                    <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
+                      <p className="sm:w-[37%]">
+                        <span className="font-semibold">Payment Id:</span>{" "}
+                        {user.paymentId}
+                      </p>
+                      <p className="sm:w-[30%]">
+                        <span className="font-semibold">Amount:</span>{" "}
+                        {user.amount}
+                      </p>
+                      <p className="sm:w-[30%]">
+                        <span className="font-semibold">Course:</span>{" "}
+                        {user.courseType}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mt-4 mb-4 flex flex-col gap-5">
+                    {/* Row 1 */}
+                    <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
+                      <p className="sm:w-[37%]">
+                        <span className="font-semibold">Email:</span>{" "}
+                        {user.email}
+                      </p>
+                      <p className="sm:w-[30%]">
+                        <span className="font-semibold">Age:</span> {user.age}
+                      </p>
+                      <p className="sm:w-[30%]">
+                        <span className="font-semibold">Mobile:</span>{" "}
+                        {user.phoneNumber}
+                      </p>
+                    </div>
+
+                    {/* Row 2 */}
+                    <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
+                      <p className="sm:w-[37%]">
+                        <span className="font-semibold">Payment Id:</span>{" "}
+                        {user.paymentId}
+                      </p>
+                      <p className="sm:w-[30%]">
+                        <span className="font-semibold">Amount:</span>{" "}
+                        {user.amount}
+                      </p>
+                      <p className="sm:w-[30%]">
+                        <span className="font-semibold">Course:</span>{" "}
+                        {user.courseType}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              // <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-sm sm:text-[1.1rem]">
+              //   <div className="space-y-2 sm:space-y-3">
+              //     <p>
+              //       <span className="font-semibold">Age:</span> {user.age}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Mobile:</span> {user.mobile}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Email:</span> {user.email}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Profession:</span>{" "}
+              //       {user.profession}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Capital:</span>{" "}
+              //       {user.capital}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Monthly Return:</span>{" "}
+              //       {user.monthlyReturn}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Experience:</span>{" "}
+              //       {user.experience}
+              //     </p>
+              //   </div>
+
+              //   <div className="space-y-2 sm:space-y-3">
+              //     <p>
+              //       <span className="font-semibold">Learned From:</span>{" "}
+              //       {user.learnedFrom}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Profits:</span>{" "}
+              //       {user.consistentProfits}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Style:</span>{" "}
+              //       {user.tradingStyle}
+              //     </p>
+              //     <p>
+              //       <span className="font-semibold">Fee Ready:</span>{" "}
+              //       {user.mentorshipFee}
+              //     </p>
+              //   </div>
+              // </div>
+            }
           </div>
         ))}
       </div>

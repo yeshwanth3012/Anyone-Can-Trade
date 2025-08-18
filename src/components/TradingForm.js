@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const TradingForm = () => {
+const TradingForm = ({form}) => {
   const location = useLocation();
   const { paymentId, courseType } = location.state || {}; 
   const [masteryForm, setMasteryForm] = useState({
@@ -12,6 +12,13 @@ const TradingForm = () => {
     capital: "",
     mentorship: ""
   });
+
+  useEffect(()=>{
+   if(form){
+    console.log(form)
+    setMasteryForm(form)
+   }
+  },[form])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,7 +64,7 @@ const handleSubmit = async () => {
 
   return (
     <>
-      <div className="rounded-lg py-5 px-4 sm:px-8 md:px-[9rem] flex flex-col gap-6 w-[95%] mx-auto bg-[#E3C45D0D] shadow-sm mt-[6.5rem]">
+      <div className={`rounded-lg py-5 px-4 sm:px-8 md:px-[9rem] flex flex-col gap-6 mx-auto shadow-sm ${form ? "w-[100%] bg-[#F0F0F0]":"mt-[6.5rem] w-[95%] bg-[#E3C45D0D]"}`}>
         <h2 className="text-xl font-normal text-center">Trading Background</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -191,7 +198,7 @@ const handleSubmit = async () => {
         <button
           style={{ backgroundColor: "rgba(110, 147, 210, 0.47)" }}
           onClick={handleSubmit}
-          className="text-[#000000] px-24 py-3 rounded-full font-medium transition text-[1.2rem]"
+          className={`text-[#000000] px-24 py-3 rounded-full font-medium transition text-[1.2rem] ${form ? "hidden":""}`}
         >
           Submit
         </button>
