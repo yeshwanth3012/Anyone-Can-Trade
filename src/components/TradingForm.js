@@ -72,7 +72,7 @@ const handleSubmit = async () => {
           <div className="flex flex-col gap-6 md:border-r md:border-gray-300 md:pl-8">
             {/* Q5 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">5. What’s your profession</p>
+              <p className="mb-1 text-start">What’s your profession</p>
               {["Salaried", "Self employed", "Not Working"].map((option) => (
                 <label key={option} className="block ml-4 md:ml-6">
                   <input
@@ -90,7 +90,7 @@ const handleSubmit = async () => {
 
             {/* Q6 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">6. Your Monthly Income</p>
+              <p className="mb-1 text-start">Your Monthly Income</p>
               {["Less than 50K", "Less than 1 lakh", "Above one lakh"].map((option) => (
                 <label key={option} className="block ml-4 md:ml-6">
                   <input
@@ -108,7 +108,7 @@ const handleSubmit = async () => {
 
             {/* Q7 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">7. Why are you into stock market</p>
+              <p className="mb-1 text-start">Why are you into stock market</p>
               {[
                 "To Become a Full-time trader/Career in stock market",
                 "Part time trader",
@@ -130,7 +130,7 @@ const handleSubmit = async () => {
 
             {/* Q8 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">8. What’s your Trading Style</p>
+              <p className="mb-1 text-start">What’s your Trading Style</p>
               {["Intraday", "Swing", "Long term Investments"].map((option) => (
                 <label key={option} className="block ml-4 md:ml-6">
                   <input
@@ -151,7 +151,7 @@ const handleSubmit = async () => {
           <div className="flex flex-col gap-6 md:pl-8">
             {/* Q9 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">9. What’s your capital</p>
+              <p className="mb-1 text-start">What’s your capital</p>
               {["Less than 2 lakhs", "2 to 5 lakhs", "5 to 10 lakhs", "Above 10 lakhs"].map(
                 (option) => (
                   <label key={option} className="block ml-4 md:ml-6">
@@ -172,7 +172,7 @@ const handleSubmit = async () => {
             {/* Q10 */}
             <div className="flex flex-col items-start">
               <p className="mb-1 text-start">
-                10. With Our ACT Mastery Mentorship, we will make you a successful trader
+                With Our ACT Mastery Mentorship, we will make you a successful trader
                 in 3 months, Will you pay 80K for the 1:1 mentorship.
               </p>
               {["Yes", "No", "Maybe"].map((option) => (

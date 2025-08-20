@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import loginLogo from "./../assets/images/login/loginLogo.svg";
 
 const AdminLogin = () => {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  // Hardcoded credentials (you can replace with env later)
+  const validUsername = "admin";
+  const validPassword = "5541";
+
+const handleLogin = () => {
+  if (username === validUsername && password === validPassword) {
+    // store "logged in" flag
+    localStorage.setItem("isLoggedIn", "true");
+
+    // navigate to dashboard
+    navigate("/admin/dashboard");
+  } else {
+    setError("Invalid username or password");
+  }
+};
+
+
   return (
     <div className="min-h-screen w-full flex justify-center items-center px-4">
       <div className="flex flex-col md:flex-row gap-6 w-full md:w-[60%]">
@@ -26,6 +49,8 @@ const AdminLogin = () => {
               <input
                 type="text"
                 placeholder="Enter Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="w-full bg-[#D9D9D9] rounded-xl px-4 py-2 focus:outline-none"
               />
             </div>
@@ -36,17 +61,25 @@ const AdminLogin = () => {
               <input
                 type="password"
                 placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full bg-[#D9D9D9] rounded-xl px-4 py-2 focus:outline-none"
               />
               <p className="mt-1 text-[0.85rem] text-[#000000] text-end cursor-pointer">
                 Forgot Password?
               </p>
             </div>
+
+            {/* Error message */}
+            {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
           </div>
 
           {/* Button */}
           <div className="w-full flex justify-center mt-6 md:mt-10 mb-4 md:mb-0">
-            <button className="bg-[#373737] text-[#FFFFFF] py-2 px-12 md:px-16 rounded-3xl">
+            <button
+              onClick={handleLogin}
+              className="bg-[#373737] text-[#FFFFFF] py-2 px-12 md:px-16 rounded-3xl"
+            >
               Sign In
             </button>
           </div>

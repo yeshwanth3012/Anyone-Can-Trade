@@ -76,7 +76,7 @@ const handleSubmit = async () => {
           <div className="flex flex-col gap-6 md:border-r md:border-gray-300 md:pl-8">
             {/* Q5 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">5. What’s your profession</p>
+              <p className="mb-1 text-start">What’s your profession</p>
               {["Salaried", "Self employed", "Not Working"].map((option) => (
                 <label key={option} className="block ml-4 md:ml-6">
                   <input
@@ -94,7 +94,7 @@ const handleSubmit = async () => {
 
             {/* Q6 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">6. Your Monthly Income</p>
+              <p className="mb-1 text-start">Your Monthly Income</p>
               {["Less than 50K", "Less than 1 lakh", "Above one lakh"].map(
                 (option) => (
                   <label key={option} className="block ml-4 md:ml-6">
@@ -115,7 +115,7 @@ const handleSubmit = async () => {
             {/* Q7 */}
             <div className="flex flex-col items-start">
               <p className="mb-1 text-start">
-                7. Why are you into stock market
+                Why are you into stock market
               </p>
               {[
                 "To Become a Full-time trader/Career in stock market",
@@ -138,7 +138,7 @@ const handleSubmit = async () => {
 
             {/* Q8 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">8. What’s your Trading Style</p>
+              <p className="mb-1 text-start">What’s your Trading Style</p>
               {["Intraday", "Swing", "Long term Investments"].map((option) => (
                 <label key={option} className="block ml-4 md:ml-6">
                   <input
@@ -156,7 +156,7 @@ const handleSubmit = async () => {
 
             {/* Q9 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">9. What’s your capital</p>
+              <p className="mb-1 text-start">What’s your capital</p>
               {[
                 "Less than 2 lakhs",
                 "2 to 5 lakhs",
@@ -183,7 +183,7 @@ const handleSubmit = async () => {
             {/* Q10 */}
             <div className="flex flex-col items-start">
               <p className="mb-1 text-start">
-                10. Monthly return on your capital.
+                Monthly return on your capital.
               </p>
               {[
                 "Making losses",
@@ -207,7 +207,7 @@ const handleSubmit = async () => {
 
             {/* Q11 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">11. Trading Experience</p>
+              <p className="mb-1 text-start">Trading Experience</p>
               {["0-1 year", "1-3 years", "Above 3 years"].map((option) => (
                 <label key={option} className="block ml-4 md:ml-6">
                   <input
@@ -225,7 +225,7 @@ const handleSubmit = async () => {
 
             {/* Q12 */}
             <div className="flex flex-col items-start">
-              <p className="mb-1 text-start">12. How did you learn Trading</p>
+              <p className="mb-1 text-start">How did you learn Trading</p>
               {[
                 "Free YouTube Videos",
                 "Paid online courses",
@@ -248,7 +248,7 @@ const handleSubmit = async () => {
             {/* Q13 */}
             <div className="flex flex-col items-start">
               <p className="mb-1 text-start">
-                13. Are you getting Consistent profits monthly
+                Are you getting Consistent profits monthly
               </p>
               {["Yes", "No"].map((option) => (
                 <label key={option} className="block ml-4 md:ml-6">
@@ -268,7 +268,7 @@ const handleSubmit = async () => {
             {/* Q14 */}
             <div className="flex flex-col items-start">
               <p className="mb-1 text-start">
-                14. If we solve your problem and make you profitable in 1 month,
+                If we solve your problem and make you profitable in 1 month,
                 Will you be able to pay a fee of 20k for this 1:1 mentorship
               </p>
               {["Yes", "No"].map((option) => (
