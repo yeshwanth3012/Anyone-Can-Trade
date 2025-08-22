@@ -1,4 +1,5 @@
 // src/hooks/useRazorpayPayment.js
+import { useState } from "react";
 import { useRazorpay } from "react-razorpay";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +7,7 @@ const useRazorpayPayment = () => {
   const { Razorpay } = useRazorpay();
   const navigate = useNavigate();
 
-  const triggerPayment = async (form, type) => {
+  const triggerPayment = async (form, type, onSuccess) => {
     try {
       // Step 1: Create work order + Razorpay order
       const res = await fetch("http://35.154.64.133:8080/api/create-order", {
@@ -70,10 +71,12 @@ const useRazorpayPayment = () => {
                 state: { paymentId: data.paymentId, courseType: type },
               });
             }else{
-              alert("Payment Successfull")
+              onSuccess("success")
+              // alert("Payment Successfull")
             }
           } else {
-            alert("Payment verification failed");
+            // alert("Payment verification failed");
+            onSuccess("failure")
           }
         },
       };

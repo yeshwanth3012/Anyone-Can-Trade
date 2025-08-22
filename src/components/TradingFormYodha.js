@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import PaymentSuccessOverlay from "./PaymentSuccessOverlay";
 
 const TradingFormYodha = ({form}) => {
   const location = useLocation();
   const { paymentId, courseType } = location.state || {}; 
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [status, setStatus] = useState("")
   const [yodhaForm, setYodhaForm] = useState({
     profession: "",
     income: "",
@@ -58,10 +61,12 @@ const handleSubmit = async () => {
 
     const data = await response.json();
     console.log("Success:", data);
-    alert("Form submitted successfully!");
+    setShowOverlay(true)
+    setStatus("success")
   } catch (error) {
     console.error("Error submitting form:", error);
-    alert("Failed to submit form.");
+    setShowOverlay(true)
+    setStatus("failure")
   }
 };
 
@@ -299,6 +304,9 @@ const handleSubmit = async () => {
           Submit
         </button>
       </div>
+        {showOverlay && (
+        <PaymentSuccessOverlay status={status} onClose={() => setShowOverlay(false)} />
+      )}
     </>
   );
 };
