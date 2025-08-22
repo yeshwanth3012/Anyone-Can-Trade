@@ -2,10 +2,10 @@ import React from "react";
 
 const testimonials = [
   {
-    name: "Rohan Sharma",
+    name: "Saiteja G",
     profession: "Full-Time Trader",
     description:
-      "Before joining Trading Masters India, I was stuck in a cycle without any real-world results. This institute changed everything. Their hands-on approach isn't just a claim—it's a reality. I didn't just learn what to do; I practiced how to do it. Now, I'm not just a student; I'm a confident trader seeing consistent returns. This is the only place in India that teaches trading the right way.",
+      "Before joining Trading Masters India, I was stuck in a cycle without any real-world results. This institute changed everything. Their hands-on approach isn't just a claim—it's a reality. I didn't just learn what to do; I practiced how to do it. Now, I'm not just a student; I'm a confident trader seeing consistent returns. I have grown my capital from 8 lakhs to 10 lakhs in 3 months. This is the only place in India that teaches trading the right way.",
     initials: "RS",
     anonymous: false,
     age:32
@@ -100,49 +100,48 @@ export default function Testimonials() {
       <h2 className="text-4xl font-[500] mb-2">Testimonials</h2>
       <h3 className="text-xl font-[500] mb-4">Our Trading Masters</h3>
 
-    <div className="w-full py-4 overflow-hidden">
-      <div className="inline-flex animate-marquee items-start space-x-8">
-        {testimonials.concat(testimonials).map((t, i) => (
-          <div
-            key={i}
-            className="relative flex-shrink-0 w-[21rem] min-h-[14rem] transition-all duration-300 z-0"
-          >
-            {/* Background card for shadow effect */}
-            <div
-              className="absolute top-[-0.5rem] left-[-0.5rem] w-[22rem] min-h-[15rem] rounded-xl bg-gray-100 shadow-lg z-0 transition-all duration-300 hover:min-h-[21rem]"
-            ></div>
+<div className="w-full py-4 overflow-hidden group">
+  <div className="inline-flex animate-marquee items-start space-x-8 group-hover:[animation-play-state:paused]">
+    {testimonials.concat(testimonials).map((t, i) => (
+      <div
+        key={i}
+        className="relative flex-shrink-0 w-[21rem] min-h-[14rem] transition-all duration-300 z-0"
+      >
+        {/* Background card for shadow effect */}
+        <div
+          className="absolute top-[-0.5rem] left-[-0.5rem] w-[22rem] min-h-[15rem] rounded-xl bg-gray-100 shadow-lg z-0 transition-all duration-300 hover:min-h-[21rem]"
+        ></div>
 
-            {/* Main card content */}
-            <div
-              className="relative z-10 w-full h-full bg-white rounded-xl shadow-lg px-4 py-4 hover:scale-105 hover:min-h-[20rem] transition-all duration-300 flex flex-col justify-between overflow-hidden"
-            >
-              <p
-                className="text-[1rem] italic text-[#474747] mt-4 line-clamp-5 hover:line-clamp-none transition-all duration-300"
-              >
-                "{t.description}"
-              </p>
-              <div className="mt-4 flex items-end justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-[#DBEAFE] text-[#4885D7] rounded-full flex items-center justify-center font-bold">
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">{t.name}</p>
-                    <p className="text-xs text-gray-500">{t.profession}</p>
-                  </div>
+        {/* Main card content */}
+        <div
+          className="relative z-10 w-full h-full bg-white rounded-xl shadow-lg px-4 py-4 hover:scale-105 hover:min-h-[20rem] transition-all duration-300 flex flex-col justify-between overflow-hidden"
+        >
+          <p className="text-[1rem] italic text-[#474747] mt-4 line-clamp-5 hover:line-clamp-none transition-all duration-300">
+            "{t.description}"
+          </p>
+          <div className="mt-4 flex items-end justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-[#DBEAFE] text-[#4885D7] rounded-full flex items-center justify-center font-bold">
+                {t.initials}
+              </div>
+              <div>
+                <p className="text-sm font-semibold">{t.name}</p>
+                <div className="flex items-center gap-1">
+                  <p className="text-xs text-gray-500">
+                    {t.profession}
+                    {t.profession && ","}
+                  </p>
+                  <p className="text-xs text-gray-500">Age:{t.age}</p>
                 </div>
-                {/* Uncomment if needed */}
-                {/* {!t.anonymous && (
-                  <button className="text-sm text-[#474747] hover:underline">
-                    Visit Profile
-                  </button>
-                )} */}
               </div>
             </div>
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 }

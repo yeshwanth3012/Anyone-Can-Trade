@@ -1,6 +1,5 @@
 import React from "react";
 import tick from "./../assets/images/testimonial/tick.svg";
-import whatsApp from "./../assets/images/testimonial/whatsapp.svg";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
@@ -222,7 +221,7 @@ const Courses = () => {
           Note: If we are unable to make you a successful Trader, we will refund
           your money*.
         </p>
-        <div
+        {/* <div
           onClick={() =>
             window.open(
               "https://wa.me/9392692459?text=Hello%20Admin%2C%20I%20am%20interested%20in%20your%20courses.",
@@ -233,7 +232,7 @@ const Courses = () => {
         >
           <img src={whatsApp} className="w-10 h-10" alt="WhatsApp" />
           <p className="text-[0.8rem] text-black">WhatsApp</p>
-        </div>
+        </div> */}
       </div>
     </>
   );

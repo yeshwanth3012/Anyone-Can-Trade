@@ -7,15 +7,15 @@ const PersonalForm = () => {
   const { triggerPayment } = useRazorpayPayment();
   const { type } = useParams();
   const capitalizedType = type.charAt(0).toUpperCase() + type.slice(1);
-  const finalAmount = useMemo(()=>{
-    if(type === "yodha" || type === "mastery"){
-      return 999
-    }else if(type === "achiever"){
-      return 20000
-    }else if(type === "pro"){
-      return 36000
+  const finalAmount = useMemo(() => {
+    if (type === "yodha" || type === "mastery") {
+      return 999;
+    } else if (type === "achiever") {
+      return 20000;
+    } else if (type === "pro") {
+      return 36000;
     }
-  },[type])
+  }, [type]);
   const [form, setForm] = useState({
     name: "",
     age: "",
@@ -23,7 +23,7 @@ const PersonalForm = () => {
     phoneNumber: "",
     currency: "INR",
     amount: finalAmount,
-    courseType: type.toUpperCase()
+    courseType: type.toUpperCase(),
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,23 +38,25 @@ const PersonalForm = () => {
   };
   return (
     <div className="mt-[6rem]">
-      <div className="flex justify-center items-center">
-        <div className="w-[90%] sm:w-[70%] mt-4 mb-4 text-left text-gray-800 text-[1.1rem] leading-relaxed">
-          <h3 className="text-3xl font-bold text-center">
-            ACT {capitalizedType}
-          </h3>
-          <p className="font-normal text-gray-900 text-[1.3rem]">
-            ACT 1:1 mentorship is for serious and dedicated traders only.
-            Membership in this Program is by application only to ensure a high
-            level of commitment and quality. Slots are strictly limited to
-            maintain the integrity of the one-on-one mentorship.
-          </p>
-          <p className="font-normal text-gray-900 mt-4 text-[1.3rem]">
-            To rule out the Junk. it’s a paid call. If you're not satisfied with
-            us, we will refund your money.
-          </p>
+      {(type === "yodha" || type === "mastery") && (
+        <div className="flex justify-center items-center">
+          <div className="w-[90%] sm:w-[70%] mt-4 mb-4 text-left text-gray-800 text-[1.1rem] leading-relaxed">
+            <h3 className="text-3xl font-bold text-center">
+              ACT {capitalizedType}
+            </h3>
+            <p className="font-normal text-gray-900 text-[1.3rem]">
+              ACT 1:1 mentorship is for serious and dedicated traders only.
+              Membership in this Program is by application only to ensure a high
+              level of commitment and quality. Slots are strictly limited to
+              maintain the integrity of the one-on-one mentorship.
+            </p>
+            <p className="font-normal text-gray-900 mt-4 text-[1.3rem]">
+              To rule out the Junk. it’s a paid call. If you're not satisfied
+              with us, we will refund your money 100%.
+            </p>
+          </div>
         </div>
-      </div>
+      )}
       <div className="rounded-lg p-5 flex flex-col gap-4 w-full max-w-[600px] mx-auto bg-[#E3C45D0D] shadow-sm">
         <div>
           <h2 className="text-xl font-normal text-center">Personal Details</h2>
@@ -122,7 +124,9 @@ const PersonalForm = () => {
         </div>
       </div>
       <div className="flex flex-col gap-2 items-center mt-3 mb-2 text-[1.1rem]">
-        <p className="font-medium">Start Trading with a Personal Mentor.</p>
+        {(type === "yodha" || type === "mastery") && (
+          <p className="font-medium">Start Trading with a Personal Mentor.</p>
+        )}
         <button
           style={{
             backgroundColor: Object.values(form).includes("")
@@ -138,7 +142,7 @@ const PersonalForm = () => {
                 : "cursor-pointer hover:shadow-lg hover:scale-[1.02]"
             }`}
         >
-          Pay 999/-
+          Pay {finalAmount}/-
         </button>
       </div>
     </div>

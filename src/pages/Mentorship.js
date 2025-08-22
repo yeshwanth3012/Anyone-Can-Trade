@@ -34,9 +34,8 @@ const Mentorship = () => {
             . Experience personalized coaching, tailored strategies, and
             hands-on practice to transform you into a confident trader. Achieve
             consistent returns with direct mentorship from industry experts.
-            Your success story starts here.
             <br />
-            <br />
+            <span className="font-bold text-center text-[1.4rem] block m-0">Your success story starts here.</span>
             <span className="font-medium">We offer 2 Programmes:</span>
             <br />
             • ACT Mastery

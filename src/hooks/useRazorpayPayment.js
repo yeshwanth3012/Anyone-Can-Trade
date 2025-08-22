@@ -52,6 +52,7 @@ const useRazorpayPayment = () => {
                 paymentId: response.razorpay_payment_id,
                 orderId: response.razorpay_order_id,
                 razorpaySignature: response.razorpay_signature,
+                userEmail:form.email
               }),
             }
           );

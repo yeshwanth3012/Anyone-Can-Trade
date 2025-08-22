@@ -11,9 +11,12 @@ import TradingFormYodha from "./components/TradingFormYodha";
 import AdminLogin from "./pages/AdminLogin";
 import PrivateRoute from "./PrivateRoute";
 import AdminDashboard from "./pages/AdminDashboard";
+import ScrollToTop from "./components/ScrollToTop";
 
 const AppRoutes = () => (
-  <Routes>
+  <>
+    <ScrollToTop />
+    <Routes>
     <Route element={<Layout />}>
       <Route path="/" element={<Home />} />
       <Route path="/courses" element={<Courses />} />
@@ -35,6 +38,7 @@ const AppRoutes = () => (
       />
     </Route>
   </Routes>
+  </>
 );
 
 export default AppRoutes;

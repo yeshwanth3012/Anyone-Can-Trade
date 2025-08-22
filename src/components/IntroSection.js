@@ -13,7 +13,7 @@ export default function IntroSection() {
         but also get practical expertise to become a confident and successful trader in 3 months.
       </p>
       
-      <p className="max-w-3xl mx-auto text-[1.4rem] text-gray-700 mt-6 leading-relaxed">
+      <p className="max-w-3xl mx-auto text-[1.6rem] text-gray-700 mt-6 leading-relaxed font-bold">
         Our Goal is Simple: You should start earning consistent returns.
       </p>
     </section>
