@@ -10,7 +10,7 @@ const useRazorpayPayment = () => {
   const triggerPayment = async (form, type, onSuccess) => {
     try {
       // Step 1: Create work order + Razorpay order
-      const res = await fetch("http://35.154.64.133:8080/api/create-order", {
+      const res = await fetch("https://trading-lb-251903543.ap-south-1.elb.amazonaws.com/api/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const useRazorpayPayment = () => {
           console.log(response);
           // Step 3: Verify payment with backend
           const verifyRes = await fetch(
-            "http://35.154.64.133:8080/api/verify-payment",
+            "https://trading-lb-251903543.ap-south-1.elb.amazonaws.com/api/verify-payment",
             {
               method: "POST",
               headers: {
