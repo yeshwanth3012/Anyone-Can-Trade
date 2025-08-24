@@ -4,6 +4,7 @@ import PaymentSuccessOverlay from "./PaymentSuccessOverlay";
 
 const TradingFormYodha = ({form}) => {
   const location = useLocation();
+  console.log("yoForm",form)
   const { paymentId, courseType } = location.state || {}; 
   const [showOverlay, setShowOverlay] = useState(false);
   const [status, setStatus] = useState("")
@@ -19,12 +20,17 @@ const TradingFormYodha = ({form}) => {
     consistentProfit: "",
     mentorshipFee: ""
   });
-
-  useEffect(()=>{
-  if(form){
-    setYodhaForm(form)
-  }
-  },[form])
+  useEffect(() => {
+    if (form) {
+      try {
+        const parsedForm = typeof form === "string" ? JSON.parse(form) : form;
+        console.log(parsedForm);
+        setYodhaForm(parsedForm);
+      } catch (error) {
+        console.error("Error parsing form:", error);
+      }
+    }
+  }, [form]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,7 +53,7 @@ const handleSubmit = async () => {
   };
 
   try {
-    const response = await fetch("https://trading-lb-251903543.ap-south-1.elb.amazonaws.com/api/save", {
+    const response = await fetch("https://api.tradingmastersindia.com/api/save", {
       method: "POST",
       headers: {
         "Content-Type": "application/json" // Sending JSON

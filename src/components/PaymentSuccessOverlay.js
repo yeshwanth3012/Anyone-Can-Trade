@@ -1,8 +1,10 @@
 // src/components/PaymentStatusOverlay.js
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const PaymentSuccessOverlay = ({ status, onClose }) => {
   const isSuccess = status === "success";
+  const navigate = useNavigate()
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
@@ -34,7 +36,9 @@ const PaymentSuccessOverlay = ({ status, onClose }) => {
         )}
 
         <button
-          onClick={onClose}
+          onClick={()=>{
+            isSuccess ? navigate("/") : onClose()
+          }}
           className={`${
             isSuccess ? "bg-green-600 hover:bg-green-700" : "bg-red-600 hover:bg-red-700"
           } text-white px-6 py-2 rounded-md text-lg font-semibold`}

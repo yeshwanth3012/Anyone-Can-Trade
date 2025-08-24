@@ -10,7 +10,7 @@ const useRazorpayPayment = () => {
   const triggerPayment = async (form, type, onSuccess) => {
     try {
       // Step 1: Create work order + Razorpay order
-      const res = await fetch("https://trading-lb-251903543.ap-south-1.elb.amazonaws.com/api/create-order", {
+      const res = await fetch("https://api.tradingmastersindia.com/api/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const useRazorpayPayment = () => {
           console.log(response);
           // Step 3: Verify payment with backend
           const verifyRes = await fetch(
-            "https://trading-lb-251903543.ap-south-1.elb.amazonaws.com/api/verify-payment",
+            "https://api.tradingmastersindia.com/api/verify-payment",
             {
               method: "POST",
               headers: {
@@ -61,7 +61,6 @@ const useRazorpayPayment = () => {
           const finalRes = await verifyRes.json();
 
           if (finalRes.status !== "failure") {
-            alert("Payment successful and verified");
             if (type === "mastery") {
               navigate("/trading-form/mastery", {
                 state: { paymentId: data.paymentId, courseType: type },
