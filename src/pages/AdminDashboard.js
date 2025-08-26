@@ -122,12 +122,10 @@ const AdminDashboard = () => {
 
                 {/* Show Form based on course type */}
                 {user.courseType === "YODHA" && (
-                  <TradingFormYodha form={user?.form?.formData} />
+                  user?.form ? <TradingFormYodha form={user?.form?.formData} /> : <p className="text-center font-bold">User has not submitted the form.</p>
                 )}
                 {user.courseType === "MASTERY" && (
-                  <>
-                  <TradingForm form={user?.form?.formData} />
-                  </>
+                  user?.form ? <TradingForm form={user?.form?.formData} />: <p className="text-center font-bold">User has not submitted the form.</p>
                 )}
               </>
             )}

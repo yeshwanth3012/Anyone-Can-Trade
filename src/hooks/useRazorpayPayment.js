@@ -26,7 +26,6 @@ const useRazorpayPayment = () => {
         alert("Failed to get payment details");
         return;
       }
-      console.log("data", data);
 
       // Step 2: Configure Razorpay popup
       const options = {
@@ -77,6 +76,9 @@ const useRazorpayPayment = () => {
             // alert("Payment verification failed");
             onSuccess("failure")
           }
+        },
+        method: {
+            emi: type === "mastery" || type === "yodha" ? true : false
         },
       };
 

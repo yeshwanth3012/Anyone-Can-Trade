@@ -62,14 +62,44 @@ const PersonalForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e) => {
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setForm((prev) => ({
+  //     ...prev,
+  //     [name]: value,
+  //   }));
+
+  //   // Remove error message as user types
+  //   setErrors((prev) => ({
+  //     ...prev,
+  //     [name]: "",
+  //   }));
+  // };
+    const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // Prevent negative age
+    if (name === "age") {
+      if (value === "" || parseInt(value) < 1) {
+        setForm((prev) => ({ ...prev, [name]: "" }));
+        return;
+      }
+    }
+
+
+  if (name === "phoneNumber") {
+    // Remove all non-digit characters
+    const digitsOnly = value.replace(/\D/g, "");
+    setForm((prev) => ({ ...prev, [name]: digitsOnly }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+    return;
+  }
+
     setForm((prev) => ({
       ...prev,
       [name]: value,
     }));
 
-    // Remove error message as user types
     setErrors((prev) => ({
       ...prev,
       [name]: "",
@@ -138,6 +168,7 @@ const PersonalForm = () => {
               name="age"
               value={form.age}
               onChange={handleChange}
+              min={1}
               className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
             />
             {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
@@ -168,6 +199,7 @@ const PersonalForm = () => {
               name="phoneNumber"
               value={form.phoneNumber}
               onChange={handleChange}
+              maxLength={10}
               className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
             />
           {errors.phoneNumber && (
