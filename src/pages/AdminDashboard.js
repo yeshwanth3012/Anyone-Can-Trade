@@ -55,7 +55,7 @@ const AdminDashboard = () => {
         USER PROFILES
       </h2>
 
-      <div className="max-w-4xl mx-auto flex flex-col gap-3">
+      <div className="max-w-6xl mx-auto flex flex-col gap-3">
         {currentUsers.map((user) => (
           <div key={user.id} className="w-full">
             {/* Row */}
@@ -66,17 +66,18 @@ const AdminDashboard = () => {
               onClick={() => toggleExpand(user.id)}
             >
               <span className="text-sm sm:text-base font-medium truncate max-w-[200px] sm:max-w-none">
-                {`Name: ${user.name}`} &nbsp;&nbsp;
-                {`Email: ${user.email}`} &nbsp;&nbsp; 
-                {`Course Type : ${user.courseType}`}
+                {`Name: ${user.name},`} &nbsp;&nbsp;
+                {`Phone Number: ${user.phoneNumber},`} &nbsp;&nbsp; 
+                {`Course Type : ${user.courseType},`}&nbsp;&nbsp; 
+                {`Transaction Id : ${user.transactionId || ""}`}
               </span>
               <div className="flex items-center gap-2 sm:gap-3">
-                <button className="hover:text-red-600">
+                {/* <button className="hover:text-red-600">
                   <Trash2 size={18} />
                 </button>
                 <button className="hover:text-blue-600">
                   <Edit size={18} />
-                </button>
+                </button> */}
                 {expandedId === user.id ? (
                   <ChevronUp size={20} />
                 ) : (
@@ -106,8 +107,8 @@ const AdminDashboard = () => {
                   {/* Row 2 */}
                   <div className="flex flex-col sm:flex-row sm:gap-[4rem] mx-3 gap-3">
                     <p className="sm:w-[37%]">
-                      <span className="font-semibold">Status:</span>{" "}
-                      {user.status}
+                      <span className="font-semibold">Transaction Id:</span>{" "}
+                      {user.transactionId}
                     </p>
                     <p className="sm:w-[30%]">
                       <span className="font-semibold">Amount:</span>{" "}

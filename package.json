@@ -20,14 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap"
-  },
-    "reactSnap": {
-    "source": "build",
-    "include": ["/", "/courses", "/contact", "/mentorship"],
-    "crawl": false,
-    "puppeteerArgs": ["--no-sandbox","--disable-setuid-sandbox"]
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +44,6 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "react-snap": "^1.23.0",
     "tailwindcss": "^3.4.3"
   }
 }
