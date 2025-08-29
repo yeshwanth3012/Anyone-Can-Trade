@@ -32,7 +32,7 @@ const useRazorpayPayment = () => {
         amount: data.amount,
         currency: data.currency,
         order_id: data.id,
-        key: "rzp_test_62EadctnuJDqab",
+        key: "rzp_live_RB5aI7fN7zWVDj",
         prefill: {
           email: form.email,
           contact: form.phoneNumber,
