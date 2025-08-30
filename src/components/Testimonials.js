@@ -6,7 +6,7 @@ const testimonials = [
     profession: "Full-Time Trader",
     description:
       "Before joining Trading Masters India, I was stuck in a cycle without any real-world results. This institute changed everything. Their hands-on approach isn't just a claim—it's a reality. I didn't just learn what to do; I practiced how to do it. Now, I'm not just a student; I'm a confident trader seeing consistent returns. I have grown my capital from 8 lakhs to 10 lakhs in 3 months. This is the only place in India that teaches trading the right way.",
-    initials: "RS",
+    initials: "ST",
     anonymous: false,
     age: 32,
   },
@@ -44,7 +44,7 @@ const testimonials = [
       "After taking a career break to raise my kids, I wanted to find a way to contribute financially without being tied to a 9-to-5 job. Trading Masters India was the perfect solution. The course material is incredibly well-structured, and the flexible learning options made it easy to study at my own pace. The community support from fellow students and mentors is what truly sets this institute apart. I am now confidently trading and managing our family's portfolio. Thank you for empowering me with this valuable skill!",
     initials: "AS",
     anonymous: false,
-    age: 44,
+    age: 42,
   },
   {
     name: "Ankit Patel",
