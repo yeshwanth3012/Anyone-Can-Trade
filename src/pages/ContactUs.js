@@ -26,6 +26,68 @@ const ContactUs = () => {
           Education Institute</title>
       <meta name="description" content="Have questions? Reach out to us for more information about trading mentorship, course details, or anything else." />
       <meta name="keywords" content="contact trading mentor, get in touch trading, trading course support, ask trading questions" />
+
+        {/* ✅ Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://tradingmastersindia.com/contact"
+        />
+
+        {/* ✅ Open Graph (Facebook, LinkedIn) */}
+        <meta
+          property="og:title"
+          content="Contact Us | Trading Masters India"
+        />
+        <meta
+          property="og:description"
+          content="Get in touch with Trading Masters India for support, queries, or more information about our courses and mentorship programs."
+        />
+        <meta
+          property="og:image"
+          content="https://tradingmastersindia.com/TMI_Logo.png"
+        />
+        <meta
+          property="og:url"
+          content="https://tradingmastersindia.com/contact"
+        />
+        <meta property="og:type" content="website" />
+
+        {/* ✅ Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Contact Us | Trading Masters India"
+        />
+        <meta
+          name="twitter:description"
+          content="Get in touch with Trading Masters India for support, queries, or more information about our courses and mentorship programs."
+        />
+        <meta
+          name="twitter:image"
+          content="https://tradingmastersindia.com/TMI_Logo.png"
+        />
+
+        {/* ✅ Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://tradingmastersindia.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Contact",
+                item: "https://tradingmastersindia.com/contact",
+              },
+            ],
+          })}
+        </script>
     </Helmet>
       <div>
       <div className="rounded-lg px-5 flex flex-col gap-4 w-full max-w-[600px] mx-auto bg-[#E3C45D0D] shadow-sm mt-[7rem]">

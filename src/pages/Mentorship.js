@@ -16,6 +16,42 @@ const Mentorship = () => {
           name="keywords"
           content="personal trading mentorship, stock market mentor, trading coach, learn trading one-on-one, beginner trading help"
         />
+          {/* Canonical URL */}
+          <link rel="canonical" href="https://tradingmastersindia.com/mentorship" />
+
+          {/* Open Graph (for Facebook, LinkedIn) */}
+          <meta property="og:title" content="One-on-One Trading Mentorship | Trading Masters India" />
+          <meta property="og:description" content="Personalized trading mentorship programs designed for determined traders. Learn at your pace with experts." />
+          <meta property="og:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
+          <meta property="og:url" content="https://tradingmastersindia.com/mentorship" />
+          <meta property="og:type" content="website" />
+
+          {/* Twitter Card */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="One-on-One Trading Mentorship | Trading Masters India" />
+          <meta name="twitter:description" content="Personalized trading mentorship programs designed for determined traders." />
+  <meta name="twitter:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
+          {/* Breadcrumb Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tradingmastersindia.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Mentorship",
+                "item": "https://tradingmastersindia.com/mentorship"
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
 
       {/* Header */}

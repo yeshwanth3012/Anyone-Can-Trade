@@ -20,6 +20,39 @@ const Courses = () => {
           name="keywords"
           content="advanced trading courses, trading videos, technical analysis course, stock trading education, self-paced trading"
         />
+        <link rel="canonical" href="https://tradingmastersindia.com/courses" />
+        {/* <!-- Open Graph --> */}
+      <meta property="og:title" content="Trading Courses | Trading Masters of India" />
+      <meta property="og:description" content="Explore expert-designed trading courses to learn stock market strategies and build financial independence." />
+      <meta property="og:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
+      <meta property="og:url" content="https://tradingmastersindia.com/courses" />
+      <meta property="og:type" content="website" />
+
+      {/* <!-- Twitter Card --> */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Trading Courses | Trading Masters of India" />
+      <meta name="twitter:description" content="Explore expert-designed trading courses to learn stock market strategies and build financial independence." />
+      <meta name="twitter:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tradingmastersindia.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Courses",
+                "item": "https://tradingmastersindia.com/courses"
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
 
       <div className="mt-[6rem] flex flex-col gap-3 items-center px-4">
