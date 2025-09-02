@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import PaymentSuccessOverlay from "./PaymentSuccessOverlay";
 
 const PersonalForm = () => {
-  const { triggerPayment } = useRazorpayPayment();
+  const { triggerPayment, isVerifying } = useRazorpayPayment();
   const { type } = useParams();
   const capitalizedType = type.charAt(0).toUpperCase() + type.slice(1);
 
@@ -223,6 +223,14 @@ const PersonalForm = () => {
         >
           Pay {finalAmount}/-
         </button>
+        {isVerifying && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+            <p className="text-white mt-4 text-lg">Verifying Payment...</p>
+          </div>
+        </div>
+      )}
       </div>
 
       {showOverlay && (

@@ -26,7 +26,7 @@ useEffect(() => {
 
       // Filter PENDING users first, then sort by createdAt desc
       const filteredData = data
-        .filter((user) => user.status != "PENDING")
+        .filter((user) => user.status !== "PENDING")
         .sort(
           (a, b) =>
             new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
@@ -42,59 +42,49 @@ useEffect(() => {
 
      
   // 🔹 Apply filters
-  const filteredUsers = users.filter((user) => {
-    let valid = true;
+const filteredUsers = users.filter((user) => {
+  let valid = true;
 
-    // Course type
-    if (courseType && user.courseType !== courseType) valid = false;
+  if (courseType && user.courseType !== courseType) valid = false;
 
-    // Age
-    if (ageValue) {
-      const age = Number(user.age);
-      const target = Number(ageValue);
+  if (ageValue && ageOperator) {
+    const age = Number(user.age);
+    const target = Number(ageValue);
 
-      if (ageOperator === "greater" && !(age > target)) valid = false;
-      if (ageOperator === "less" && !(age < target)) valid = false;
-      if (ageOperator === "equal" && !(age === target)) valid = false;
+    if (ageOperator === "greater" && age <= target) valid = false;
+    if (ageOperator === "less" && age >= target) valid = false;
+    if (ageOperator === "equal" && age !== target) valid = false;
+  }
+
+  if (startDate || endDate) {
+    const userDate = new Date(user.createdAt);
+    userDate.setHours(0, 0, 0, 0);
+
+    if (startDate && !endDate) {
+      const start = new Date(startDate);
+      start.setHours(0, 0, 0, 0);
+      if (userDate < start) valid = false;
     }
 
-    // Date range
-   const userDate = new Date(user.createdAt);
+    if (!startDate && endDate) {
+      const end = new Date(endDate);
+      end.setHours(23, 59, 59, 999);
+      if (userDate > end) valid = false;
+    }
 
-      if (startDate && !endDate) {
-        const start = new Date(startDate);
-        start.setHours(0, 0, 0, 0);
-        userDate.setHours(0, 0, 0, 0);
+    if (startDate && endDate) {
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      start.setHours(0, 0, 0, 0);
+      end.setHours(23, 59, 59, 999);
+      if (userDate < start || userDate > end) valid = false;
+    }
+  }
 
-        if (userDate < start) valid = false;
-      }
+  return valid;
+});
 
-      // Only end date
-      if (!startDate && endDate) {
-        const end = new Date(endDate);
-        end.setHours(23, 59, 59, 999);
-        userDate.setHours(0, 0, 0, 0);
-
-        if (userDate > end) valid = false;
-      }
-
-      // Both start & end date
-      if (startDate && endDate) {
-        const start = new Date(startDate);
-        const end = new Date(endDate);
-
-        start.setHours(0, 0, 0, 0);
-        end.setHours(23, 59, 59, 999);
-        userDate.setHours(0, 0, 0, 0);
-
-        if (userDate < start || userDate > end) {
-          valid = false;
-        }
-      }
-
-
-    return valid;
-  });
+console.log("filteredUsers", filteredUsers, "users", users)
 
   // Pagination
   const totalPages = Math.ceil(filteredUsers.length / usersPerPage);

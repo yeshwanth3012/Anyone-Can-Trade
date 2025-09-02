@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const useRazorpayPayment = () => {
   const { Razorpay } = useRazorpay();
   const navigate = useNavigate();
+  const [isVerifying, setIsVerifying] = useState(false);
 
   const triggerPayment = async (form, type, onSuccess) => {
     try {
@@ -41,6 +42,7 @@ const useRazorpayPayment = () => {
         },
         handler: async function (response) {
           console.log(response);
+          setIsVerifying(true)
           // Step 3: Verify payment with backend
           const verifyRes = await fetch(
             "https://api.tradingmastersindia.com/api/verify-payment",
@@ -88,10 +90,12 @@ const useRazorpayPayment = () => {
     } catch (error) {
       console.error("Payment Error:", error);
       alert("Something went wrong. Please try again.");
+    } finally{
+      setIsVerifying(false)
     }
   };
 
-  return { triggerPayment };
+  return { triggerPayment, isVerifying };
 };
 
 export default useRazorpayPayment;
