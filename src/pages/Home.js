@@ -9,24 +9,53 @@ export default function Home() {
   return (
     <div className="rounded-md mt-[5rem]">
       <Helmet>
-      <title>Trading Masters India – Indias Best Online Stock Market Education Institute</title>
-      <meta name="description" content="India’s only Institute for hands-on Trading. You won’t just learn the theory, but also get practical expertise to become a successful trader in 3 months." />
-      <meta name="keywords" content="trading for beginners, learn trading, start trading, trading mentorship, online trading classes, stock market basics" />
-      <link rel="canonical" href="https://tradingmastersindia.com/" />
+        <title>Trading Masters India – Indias Best Online Stock Market Education Institute</title>
+        <meta
+          name="description"
+          content="India’s only Institute for hands-on Trading. You won’t just learn the theory, but also get practical expertise to become a successful trader in 3 months."
+        />
+        <meta
+          name="keywords"
+          content="trading for beginners, learn trading, start trading, trading mentorship, online trading classes, stock market basics"
+        />
+        <link rel="canonical" href="https://tradingmastersindia.com/" />
 
-    {/* <!-- Open Graph --> */}
-    <meta property="og:title" content="Trading Masters of India | Learn Smart Trading" />
-    <meta property="og:description" content="Join Trading Masters of India to master the art of stock market trading with expert-led courses and mentorship." />
-    <meta property="og:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
-    <meta property="og:url" content="https://tradingmastersindia.com/" />
-    <meta property="og:type" content="website" />
+        {/* Open Graph */}
+        <meta property="og:title" content="Trading Masters India | Learn Smart Trading" />
+        <meta
+          property="og:description"
+          content="Join Trading Masters India to master the art of stock market trading with expert-led courses and mentorship."
+        />
+        <meta property="og:image" content="https://tradingmastersindia.com/TMI_logo.png" />
+        <meta property="og:url" content="https://tradingmastersindia.com/" />
+        <meta property="og:type" content="website" />
 
-    {/* <!-- Twitter Card --> */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Trading Masters of India | Learn Smart Trading" />
-    <meta name="twitter:description" content="Join Trading Masters of India to master the art of stock market trading with expert-led courses and mentorship." />
-    <meta name="twitter:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Trading Masters India | Learn Smart Trading" />
+        <meta
+          name="twitter:description"
+          content="Join Trading Masters India to master the art of stock market trading with expert-led courses and mentorship."
+        />
+        <meta name="twitter:image" content="https://tradingmastersindia.com/TMI_logo.png" />
 
+        {/* Organization schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Trading Masters India",
+            "url": "https://tradingmastersindia.com",
+            "logo": "https://tradingmastersindia.com/TMI_logo.png",
+            "sameAs": [
+              "https://www.facebook.com/yourpage",
+              "https://www.linkedin.com/company/yourpage",
+              "https://twitter.com/yourpage"
+            ]
+          }
+        `}</script>
+
+        {/* Breadcrumb schema */}
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -40,9 +69,9 @@ export default function Home() {
               }
             ]
           }
-        `}
-      </script>
-    </Helmet>
+        `}</script>
+      </Helmet>
+
       <IntroSection />
       <VideoSection />
       <JourneyButton />
