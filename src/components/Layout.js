@@ -16,10 +16,10 @@ export default function Layout() {
       {location.pathname !== "/mentorship" && (
         <div
           onClick={() =>
-            window.open(
-              "https://wa.me/9392692459?text=Hello%20Admin%2C%20I%20am%20interested%20in%20your%20courses.",
-              "_blank"
-            )
+                    window.open(
+          "https://wa.me/9392692459?text=Hey%2C%20TMI!",
+            "_blank"
+          )
           }
           className="fixed bottom-4 right-10 cursor-pointer flex flex-col items-center gap-1 z-50"
         >
