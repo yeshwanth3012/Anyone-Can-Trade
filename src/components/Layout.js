@@ -13,7 +13,11 @@ export default function Layout() {
       <div className="">
         <Outlet />
       </div>
-      {location.pathname !== "/mentorship" && (
+  {!(
+      location.pathname.startsWith("/mentorship") ||
+      location.pathname.startsWith("/admin/dashboard") ||
+      location.pathname.startsWith("/admin/login")
+    ) && (
         <div
           onClick={() =>
                     window.open(
