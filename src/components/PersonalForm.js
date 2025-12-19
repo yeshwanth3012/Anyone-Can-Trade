@@ -75,7 +75,7 @@ const PersonalForm = () => {
   //     [name]: "",
   //   }));
   // };
-    const handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
 
     // Prevent negative age
@@ -86,14 +86,13 @@ const PersonalForm = () => {
       }
     }
 
-
-  if (name === "phoneNumber") {
-    // Remove all non-digit characters
-    const digitsOnly = value.replace(/\D/g, "");
-    setForm((prev) => ({ ...prev, [name]: digitsOnly }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
-    return;
-  }
+    if (name === "phoneNumber") {
+      // Remove all non-digit characters
+      const digitsOnly = value.replace(/\D/g, "");
+      setForm((prev) => ({ ...prev, [name]: digitsOnly }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+      return;
+    }
 
     setForm((prev) => ({
       ...prev,
@@ -133,7 +132,7 @@ const PersonalForm = () => {
             </p>
             <p className="font-normal text-gray-900 mt-4 text-[1.3rem]">
               To rule out the Junk. it’s a paid call. If you're not satisfied
-              with us, we will refund your money 100%.
+              with us, we will refund your money.
             </p>
           </div>
         </div>
@@ -148,14 +147,16 @@ const PersonalForm = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center w-full">
             <label className="sm:w-[30%]">Name:</label>
             <div className="sm:w-[69%] w-full">
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
-            />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
             </div>
           </div>
 
@@ -163,15 +164,17 @@ const PersonalForm = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center w-full">
             <label className="sm:w-[30%]">Age:</label>
             <div className="sm:w-[69%] w-full">
-            <input
-              type="number"
-              name="age"
-              value={form.age}
-              onChange={handleChange}
-              min={1}
-              className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
-            />
-            {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
+              <input
+                type="number"
+                name="age"
+                value={form.age}
+                onChange={handleChange}
+                min={1}
+                className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
+              />
+              {errors.age && (
+                <p className="text-red-500 text-sm">{errors.age}</p>
+              )}
             </div>
           </div>
 
@@ -179,14 +182,16 @@ const PersonalForm = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center w-full">
             <label className="sm:w-[30%]">Email ID:</label>
             <div className="sm:w-[69%] w-full">
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
-            />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
             </div>
           </div>
 
@@ -194,17 +199,17 @@ const PersonalForm = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center w-full">
             <label className="sm:w-[30%]">Phone Number:</label>
             <div className="sm:w-[69%] w-full">
-            <input
-              type="tel"
-              name="phoneNumber"
-              value={form.phoneNumber}
-              onChange={handleChange}
-              maxLength={10}
-              className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
-            />
-          {errors.phoneNumber && (
-            <p className="text-red-500 text-sm">{errors.phoneNumber}</p>
-          )}
+              <input
+                type="tel"
+                name="phoneNumber"
+                value={form.phoneNumber}
+                onChange={handleChange}
+                maxLength={10}
+                className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
+              />
+              {errors.phoneNumber && (
+                <p className="text-red-500 text-sm">{errors.phoneNumber}</p>
+              )}
             </div>
           </div>
         </div>
@@ -224,13 +229,13 @@ const PersonalForm = () => {
           Pay {finalAmount}/-
         </button>
         {isVerifying && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="flex flex-col items-center">
-            <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
-            <p className="text-white mt-4 text-lg">Verifying Payment...</p>
+          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+              <p className="text-white mt-4 text-lg">Verifying Payment...</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
       </div>
 
       {showOverlay && (

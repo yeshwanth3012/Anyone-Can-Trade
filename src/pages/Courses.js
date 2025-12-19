@@ -1,38 +1,62 @@
 import React from "react";
-import tick from "./../assets/images/testimonial/tick.svg";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
 const Courses = () => {
   const navigate = useNavigate();
+
   return (
     <>
       <Helmet>
         <title>
-          Courses | Trading Masters India – Indias Best Online Stock Market
+          Courses | Trading Masters India – India’s Best Online Stock Market
           Education Institute
         </title>
         <meta
           name="description"
-          content="Explore advanced trading strategies with our self-paced video courses. Ideal for those with basic knowledge who want to level up their skills."
+          content="Explore expert-designed trading courses with NeuroFinance Blueprint. Learn trading strategies, risk management, and psychology to trade confidently."
         />
         <meta
           name="keywords"
-          content="advanced trading courses, trading videos, technical analysis course, stock trading education, self-paced trading"
+          content="trading courses, stock market courses, NeuroFinance Blueprint, trading psychology, trading education India"
         />
         <link rel="canonical" href="https://tradingmastersindia.com/courses" />
-        {/* <!-- Open Graph --> */}
-      <meta property="og:title" content="Trading Courses | Trading Masters of India" />
-      <meta property="og:description" content="Explore expert-designed trading courses to learn stock market strategies and build financial independence." />
-      <meta property="og:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
-      <meta property="og:url" content="https://tradingmastersindia.com/courses" />
-      <meta property="og:type" content="website" />
 
-      {/* <!-- Twitter Card --> */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Trading Courses | Trading Masters of India" />
-      <meta name="twitter:description" content="Explore expert-designed trading courses to learn stock market strategies and build financial independence." />
-      <meta name="twitter:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Trading Courses | Trading Masters India"
+        />
+        <meta
+          property="og:description"
+          content="Expert-designed trading courses with NeuroFinance Blueprint to master markets and mindset."
+        />
+        <meta
+          property="og:image"
+          content="https://tradingmastersindia.com/TMI_Logo.png"
+        />
+        <meta
+          property="og:url"
+          content="https://tradingmastersindia.com/courses"
+        />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Trading Courses | Trading Masters India"
+        />
+        <meta
+          name="twitter:description"
+          content="Master trading strategies, psychology, and discipline with our expert-led courses."
+        />
+        <meta
+          name="twitter:image"
+          content="https://tradingmastersindia.com/TMI_Logo.png"
+        />
+
+        {/* Breadcrumb */}
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -55,48 +79,55 @@ const Courses = () => {
         `}</script>
       </Helmet>
 
-      <div className="mt-[6rem] flex flex-col gap-3 items-center px-4">
+      <div className="mt-[6rem] flex flex-col gap-4 items-center px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-[500] text-center">
           Courses
         </h2>
 
+        {/* 3 Month Breakdown */}
         <section className="text-center px-6 py-4 max-w-6xl mx-auto">
           <p className="text-lg sm:text-xl md:text-2xl font-medium mb-6">
             All Our Courses are curated for 3 months
           </p>
 
-          <p className="text-base sm:text-lg md:text-xl text-start mb-3">
+          <p className="text-base sm:text-lg md:text-xl text-start mb-4">
             <span className="font-semibold">First Month – </span>
-            Theoretical Part.
+            Theoretical Part. You’ll dive into the foundations of trading and be
+            introduced to the basics of the{" "}
+            <span className="font-semibold">NeuroFinance Blueprint</span>, helping
+            you build a strong mental framework from day one.
           </p>
 
-          <p className="text-base sm:text-lg md:text-xl text-start mb-3">
+          <p className="text-base sm:text-lg md:text-xl text-start mb-4">
             <span className="font-semibold">Second Month – </span>
-            Practical application in the live market.
-            <br />
-            Risk Management and Trading Psychology.
+            Practical application in the live market. You’ll execute trades
+            using a structured roadmap while emphasizing risk management and
+            trading psychology as part of the{" "}
+            <span className="font-semibold">NeuroFinance Blueprint</span>.
           </p>
 
           <p className="text-base sm:text-lg md:text-xl text-start">
             <span className="font-semibold">Third Month – </span>
-            For refining your Strategies in the market and submission of your
-            track sheet to us.
+            Refining your strategies and submitting your track sheet. This phase
+            helps you fine-tune your approach and strengthen both technical
+            skills and mental resilience to trade confidently on your own.
           </p>
         </section>
 
-        <p className="text-base sm:text-lg md:text-xl font-[600] text-gray-600 text-center">
-          Note: We teach 2 batches, Weekday and Weekend batches for our
-          student's convenience. <br />
+        <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-600 text-center">
+          Note: We teach Weekday and Weekend batches for students’ convenience.
+          <br />
           Courses are offered in English, Hindi & Telugu.
         </p>
 
-        {/* Video Section */}
+        {/* Video */}
         <h2 className="text-lg sm:text-xl md:text-2xl font-[500] text-center mt-6">
-          Please watch this video for clear understanding of our course
+          Please watch this video for a clear understanding of our course
         </h2>
-        <div className="w-[320px] sm:w-[900px] h-[200px] sm:h-[400px] bg-gray-300 rounded-md flex items-center justify-center text-white font-semibold">
+
+        <div className="w-[320px] sm:w-[900px] h-[200px] sm:h-[400px] rounded-md overflow-hidden">
           <video
-            className="w-full h-full object-cover rounded-md"
+            className="w-full h-full object-cover"
             controls
             preload="metadata"
           >
@@ -106,95 +137,75 @@ const Courses = () => {
         </div>
 
         {/* Pricing Table */}
-        <div className="w-full max-w-5xl overflow-x-auto mt-4">
+        <div className="w-full max-w-5xl overflow-x-auto mt-6">
           <table className="min-w-[720px] table-fixed border border-gray-300 rounded-md text-left text-sm sm:text-base md:text-lg text-gray-700">
-            <thead className="bg-gray-100 text-black text-base sm:text-lg md:text-xl">
+            <thead className="bg-gray-100 text-black">
               <tr>
-                <th className="p-4 border-r border-gray-300 font-semibold" style={{ width: "25%" }}>
-                  Features
-                </th>
-                <th className="p-4 border-r border-gray-300 font-semibold" style={{ width: "37.5%" }}>
+                <th className="p-4 border-r border-gray-300 w-[25%]">Features</th>
+                <th className="p-4 border-r border-gray-300 w-[37.5%]">
                   ACT Achiever
                 </th>
-                <th className="p-4 font-semibold" style={{ width: "37.5%" }}>
-                  ACT Pro
-                </th>
+                <th className="p-4 w-[37.5%]">ACT Pro</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-t border-gray-300">
-                <td className="p-4 border-r border-gray-300 font-medium">
-                  Course Details
-                </td>
-                <td className="p-4 border-r border-gray-300">
+              <tr className="border-t">
+                <td className="p-4 border-r font-medium">Course Details</td>
+                <td className="p-4 border-r">
                   <ul className="list-disc pl-5 space-y-1">
-                    <li>1 month of theory</li>
+                    <li>1 month of theory & introduction to NeuroFinance Blueprint</li>
                     <li>
-                      2<sup>nd</sup> Month: Roadmap for the Practical
-                      application in live market will be given i.e, Paper
-                      Trading- Equity -Option Hedging – Naked options Trading.
+                      2nd Month: Practical roadmap – Paper Trading, Equity,
+                      Option Hedging & Naked Options Trading
                     </li>
                     <li>
-                      3<sup>rd</sup> Month: Mastering Risk Management & Trading
-                      Psychology.
+                      3rd Month: Mastering Risk Management & Trading Psychology
                     </li>
                   </ul>
                   <p className="mt-2">
-                    Students have to follow the roadmap and submit the track
-                    sheet.
+                    Students must follow the roadmap and submit the track sheet.
                   </p>
                 </td>
                 <td className="p-4">
                   <ul className="list-disc pl-5 space-y-1">
-                    <li>1 month of theory</li>
+                    <li>1 month of theory & introduction to NeuroFinance Blueprint</li>
                     <li>
-                      2<sup>nd</sup> Month: Roadmap for the Practical
-                      application in live market will be given i.e, Paper
-                      Trading- Equity -Option Hedging – Naked options Trading.
+                      2nd Month: Practical roadmap – Paper Trading, Equity,
+                      Option Hedging & Naked Options Trading
                     </li>
                     <li>
-                      3<sup>rd</sup> Month: Mastering Risk Management & Trading
-                      Psychology.
+                      3rd Month: Mastering Risk Management & Trading Psychology
                     </li>
                   </ul>
                   <p className="mt-2">
-                    Students have to follow the roadmap and submit the track
-                    sheet.
+                    Students must follow the roadmap and submit the track sheet.
                   </p>
                 </td>
               </tr>
 
-              <tr className="border-t border-gray-300">
-                <td className="p-4 border-r border-gray-300 font-medium">
-                  Live Q/A
-                </td>
-                <td className="p-4 border-r border-gray-300">Available</td>
+              <tr className="border-t">
+                <td className="p-4 border-r font-medium">Live Q/A</td>
+                <td className="p-4 border-r">Available</td>
                 <td className="p-4">Available</td>
               </tr>
 
-              <tr className="border-t border-gray-300">
-                <td className="p-4 border-r border-gray-300 font-medium">
-                  Live Assistance
+              <tr className="border-t">
+                <td className="p-4 border-r font-medium">
+                  Live Assistance for Trades
                 </td>
-                <td className="p-4 border-r border-gray-300">Not Available</td>
+                <td className="p-4 border-r">Not Available</td>
                 <td className="p-4">Available</td>
               </tr>
 
-              <tr className="border-t border-gray-300">
-                <td className="p-4 border-r border-gray-300 font-medium">
-                  Price
-                </td>
-                <td className="p-4 border-r border-gray-300 font-semibold">
-                  ₹20,000/-
-                </td>
+              <tr className="border-t">
+                <td className="p-4 border-r font-medium">Price</td>
+                <td className="p-4 border-r font-semibold">₹20,000/-</td>
                 <td className="p-4 font-semibold">₹36,000/-</td>
               </tr>
 
-              <tr className="border-t border-gray-300">
-                <td className="p-4 border-r border-gray-300 font-medium">
-                  Enroll
-                </td>
-                <td className="p-4 border-r border-gray-300">
+              <tr className="border-t">
+                <td className="p-4 border-r font-medium">Enroll</td>
+                <td className="p-4 border-r">
                   <button
                     onClick={() => navigate("/form/achiever")}
                     className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition"
@@ -215,11 +226,12 @@ const Courses = () => {
           </table>
         </div>
 
-        <p className="text-lg sm:text-xl md:text-2xl m-0 font-semibold italic text-center text-gray-800">
+        <p className="text-lg sm:text-xl md:text-2xl font-semibold italic text-center text-gray-800 mt-6">
           “Don’t Procrastinate, it will delay your dreams”
         </p>
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 font-semibold text-center mb-4">
-          Note: If we are unable to make you a successful Trader, we will refund
+
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 font-semibold text-center mb-6">
+          Note: If we are unable to make you a successful trader, we will refund
           your money*.
         </p>
       </div>

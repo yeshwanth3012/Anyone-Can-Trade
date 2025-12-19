@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <img src="/TMI_Logo.png" width="50" height="50" alt="TMI Logo" />
           <h1 className="text-sm sm:text-base md:text-xl text-[#000000] font-medium">
-            Trading Masters of India
+            Trading Masters India
           </h1>
         </div>
 

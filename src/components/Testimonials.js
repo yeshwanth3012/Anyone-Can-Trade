@@ -1,12 +1,11 @@
 import React from "react";
-
 const testimonials = [
   {
-    name: "Saiteja G",
+    name: "Rohan Sharma",
     profession: "Full-Time Trader",
     description:
-      "Before joining Trading Masters India, I was stuck in a cycle without any real-world results. This institute changed everything. Their hands-on approach isn't just a claim—it's a reality. I didn't just learn what to do; I practiced how to do it. Now, I'm not just a student; I'm a confident trader seeing consistent returns. I have grown my capital from 8 lakhs to 10 lakhs in 3 months. This is the only place in India that teaches trading the right way.",
-    initials: "ST",
+      "Before joining Trading Masters India, I was stuck in a cycle without any real-world results. This institute changed everything. Their hands-on approach isn't just a claim—it's a reality. I didn't just learn what to do; I practiced how to do it. What made a real difference was the personal live assistance during trades and the NeuroFinance Blueprint, which helped me understand how my mindset affects every decision. Now, I'm not just a student; I'm a confident trader seeing consistent returns. This is the only place in India that teaches trading the right way.",
+    initials: "RS",
     anonymous: false,
     age: 32,
   },
@@ -14,43 +13,43 @@ const testimonials = [
     name: "Karan V",
     profession: "Pharmacist and Part-Time Trader",
     description:
-      "I started with zero knowledge about the stock market, and honestly, the sheer volume of information online was overwhelming. The curriculum at Trading Masters India was a lifesaver. It broke down complex topics into simple, actionable strategies. The best part? The live market sessions. Seeing the instructors apply their strategies in real-time built my confidence. Now, I'm not just a spectator; I'm an active and profitable participant in the market.",
+      "I started with zero knowledge about the stock market, and honestly, the sheer volume of information online was overwhelming. The curriculum at Trading Masters India was a lifesaver. It broke down complex topics into simple, actionable strategies. The live market sessions, along with the NeuroFinance Blueprint, helped me stay calm and focused while learning in real market conditions. Seeing the instructors apply their strategies in real-time built my confidence. Now, I'm not just a spectator; I'm an active and profitable participant in the market.",
     initials: "KV",
     anonymous: false,
     age: 27,
   },
   {
-    name: "Arjun P",
-    profession: "Banker",
-    description:
-      "As I approached retirement, I knew I needed to take control of my finances, but I didn't want to rely solely on traditional investments. The in-depth courses at Trading Masters India on fundamental and technical analysis gave me the tools to build a strong portfolio. The instructors’ years of experience and their practical insights are invaluable. This is more than just a course; it's a foundation for a secure and prosperous future.",
-    initials: "AP",
-    anonymous: false,
-    age: 59,
-  },
-  {
     name: "Divyansh K",
     profession: "",
     description:
-      "The best decision I ever made was enrolling in Trading Masters India. I was tired of hearing about market opportunities without understanding them. The instructors' practical, no-nonsense approach and the personalized support were exactly what I needed. They helped me create a trading plan that fits my busy schedule as a professional. Now, I feel confident and in control of my financial future, rather than just passively investing.",
+      "The best decision I ever made was enrolling in Trading Masters India. I was tired of hearing about market opportunities without understanding them. The instructors' practical, no-nonsense approach and the personalized support were exactly what I needed. The NeuroFinance Blueprint helped me align my thinking with market behavior, and the personal guidance ensured I stayed on track. They helped me create a trading plan that fits my busy schedule as a professional. Now, I feel confident and in control of my financial future, rather than just passively investing.",
     initials: "DK",
     anonymous: false,
     age: 44,
   },
   {
+    name: "Arjun P",
+    profession: "Banker",
+    description:
+      "As I approached retirement, I knew I needed to take control of my finances, but I didn't want to rely solely on traditional investments. The in-depth courses at Trading Masters India on fundamental and technical analysis gave me the tools to build a strong portfolio. The NeuroFinance Blueprint helped me overcome fear and hesitation, while the mentors’ live assistance added immense clarity. The instructors’ years of experience and their practical insights are invaluable. This is more than just a course; it's a foundation for a secure and prosperous future.",
+    initials: "AP",
+    anonymous: false,
+    age: 59,
+  },
+  {
     name: "Anita S",
     profession: "",
     description:
-      "After taking a career break to raise my kids, I wanted to find a way to contribute financially without being tied to a 9-to-5 job. Trading Masters India was the perfect solution. The course material is incredibly well-structured, and the flexible learning options made it easy to study at my own pace. The community support from fellow students and mentors is what truly sets this institute apart. I am now confidently trading and managing our family's portfolio. Thank you for empowering me with this valuable skill!",
+      "After taking a career break to raise my kids, I wanted to find a way to contribute financially without being tied to a 9-to-5 job. Trading Masters India was the perfect solution. The course material is incredibly well-structured, and the NeuroFinance Blueprint helped me build confidence and discipline. The flexible learning options made it easy to study at my own pace. The community support from fellow students and mentors is what truly sets this institute apart. I am now confidently trading and managing our family's portfolio.",
     initials: "AS",
     anonymous: false,
-    age: 42,
+    age: 44,
   },
   {
     name: "Ankit Patel",
     profession: "Software Engineer & Part-Time Trader",
     description:
-      "I was sceptical at first, but Trading Masters India delivered on every promise. The practical, step-by-step training made the market feel less intimidating and more manageable. The best part? They didn't just give me a strategy; they gave me the confidence to execute it. I started earning consistent returns a few months in, and it's all thanks to their unique, practical teaching style.",
+      "I was sceptical at first, but Trading Masters India delivered on every promise. The practical, step-by-step training made the market feel less intimidating and more manageable. The NeuroFinance Blueprint helped me remove emotional trading mistakes, and the personal assistance ensured correct execution. They didn't just give me a strategy; they gave me the confidence to execute it. I started earning consistent returns a few months in, and it's all thanks to their unique, practical teaching style.",
     initials: "AP",
     anonymous: false,
     age: 29,
@@ -59,7 +58,7 @@ const testimonials = [
     name: "Rajesh M",
     profession: "",
     description:
-      "I've always been interested in the stock market, but I never knew where to begin. The thought of trading seemed complicated and risky. Trading Masters India demystified it for me. The instructors are not only experts but also excellent teachers who break down complex concepts into simple steps. They taught me a systematic approach to trading, focusing on long-term growth and safety. This has given me a new, exciting passion and a way to secure my retirement.",
+      "I've always been interested in the stock market, but I never knew where to begin. The thought of trading seemed complicated and risky. Trading Masters India demystified it for me. The instructors are not only experts but also excellent teachers who combine strategy with the NeuroFinance Blueprint to build discipline and patience. They taught me a systematic approach to trading, focusing on long-term growth and safety. This has given me a new, exciting passion and a way to secure my retirement.",
     initials: "RM",
     anonymous: false,
     age: 58,
@@ -68,7 +67,7 @@ const testimonials = [
     name: "Rohan P",
     profession: "",
     description:
-      "I came to Trading Masters India with a fresh mindset and a desire to learn how to make my money work for me. The 'ACT Mastery' course was phenomenal. Rahul sir doesn’t just teach you strategies; he teaches you how to think like a trader. He focuses heavily on discipline and mindset, which I now realize is the most important part. I've already made back my course fee and am well on my way to building a consistent income stream from trading.",
+      "I came to Trading Masters India with a fresh mindset and a desire to learn how to make my money work for me. The 'ACT Mastery' course was phenomenal. Rahul sir doesn’t just teach you strategies; he teaches you how to think like a trader through the NeuroFinance Blueprint. He focuses heavily on discipline and mindset, which I now realize is the most important part. I've already made back my course fee and am well on my way to building a consistent income stream from trading.",
     initials: "RP",
     anonymous: false,
     age: 22,
@@ -77,7 +76,7 @@ const testimonials = [
     name: "Pooja R",
     profession: "Home maker and Full-Time Trader",
     description:
-      "After my kids were a bit older, I was looking for a way to contribute to our family's income while having the flexibility to be at home. I was hesitant about trading, but the support I received from Trading Masters India was incredible. The structured courses and the patient instructors made learning enjoyable. They taught me how to read charts, manage risk, and make smart decisions. I've now found a fulfilling way to earn, and I'm so proud of what I've accomplished.",
+      "After my kids were a bit older, I was looking for a way to contribute to our family's income while having the flexibility to be at home. I was hesitant about trading, but the support I received from Trading Masters India was incredible. The personal assistance during learning and the NeuroFinance Blueprint helped me gain confidence step by step. The structured courses and the patient instructors made learning enjoyable. They taught me how to read charts, manage risk, and make smart decisions. I've now found a fulfilling way to earn.",
     initials: "PR",
     anonymous: false,
     age: 46,
@@ -86,12 +85,11 @@ const testimonials = [
     name: "Ananya S",
     profession: "Dentist and Part-Time Trader",
     description:
-      "I was an experienced professional but a novice trader, and I was losing money on emotional decisions. Trading Masters India taught me that trading is a skill, not a gamble. The focus on risk management and trading psychology was a complete game-changer. The personalized mentorship (ACT Yodha) helped me identify my weak spots and build a disciplined trading plan. My profits are now consistent, and my stress levels are down.",
+      "I was an experienced professional but a novice trader, and I was losing money on emotional decisions. Trading Masters India taught me that trading is a skill, not a gamble. The focus on trading psychology through the NeuroFinance Blueprint was a complete game-changer. The personalized mentorship (ACT Yodha) helped me identify my weak spots and build a disciplined trading plan. My profits are now consistent, and my stress levels are down.",
     initials: "AS",
     anonymous: false,
     age: 34,
   },
-  // Add more if needed
 ];
 
 export default function Testimonials() {

@@ -16,22 +16,46 @@ const Mentorship = () => {
           name="keywords"
           content="personal trading mentorship, stock market mentor, trading coach, learn trading one-on-one, beginner trading help"
         />
-          {/* Canonical URL */}
-          <link rel="canonical" href="https://tradingmastersindia.com/mentorship" />
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href="https://tradingmastersindia.com/mentorship"
+        />
 
-          {/* Open Graph (for Facebook, LinkedIn) */}
-          <meta property="og:title" content="One-on-One Trading Mentorship | Trading Masters India" />
-          <meta property="og:description" content="Personalized trading mentorship programs designed for determined traders. Learn at your pace with experts." />
-          <meta property="og:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
-          <meta property="og:url" content="https://tradingmastersindia.com/mentorship" />
-          <meta property="og:type" content="website" />
+        {/* Open Graph (for Facebook, LinkedIn) */}
+        <meta
+          property="og:title"
+          content="One-on-One Trading Mentorship | Trading Masters India"
+        />
+        <meta
+          property="og:description"
+          content="Personalized trading mentorship programs designed for determined traders. Learn at your pace with experts."
+        />
+        <meta
+          property="og:image"
+          content="https://tradingmastersindia.com/TMI_Logo.png"
+        />
+        <meta
+          property="og:url"
+          content="https://tradingmastersindia.com/mentorship"
+        />
+        <meta property="og:type" content="website" />
 
-          {/* Twitter Card */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="One-on-One Trading Mentorship | Trading Masters India" />
-          <meta name="twitter:description" content="Personalized trading mentorship programs designed for determined traders." />
-  <meta name="twitter:image" content="https://tradingmastersindia.com/TMI_Logo.png" />
-          {/* Breadcrumb Schema */}
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="One-on-One Trading Mentorship | Trading Masters India"
+        />
+        <meta
+          name="twitter:description"
+          content="Personalized trading mentorship programs designed for determined traders."
+        />
+        <meta
+          name="twitter:image"
+          content="https://tradingmastersindia.com/TMI_Logo.png"
+        />
+        {/* Breadcrumb Schema */}
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -70,20 +94,26 @@ const Mentorship = () => {
           <p>
             Unlock your trading potential with{" "}
             <span className="font-semibold">
-              Trading Masters' India 1-to-1 Membership Program
+              Trading Masters India’s 1-to-1 Membership Program
             </span>
-            . Experience personalized coaching, tailored strategies, and
-            hands-on practice to transform you into a confident trader. Achieve
-            consistent returns with direct mentorship from industry experts.
+            . This isn’t just about learning to trade—it’s about mastering the
+            mindset behind trading.
             <br />
-            <span className="font-bold text-center text-[1.2rem] sm:text-[1.4rem] block m-0">
-              Your success story starts here.
-            </span>
-            <span className="font-medium">We offer 2 Programmes:</span>
-            <br />
-            • ACT Mastery
-            <br />• ACT Yodha
+            With the{" "}
+            <span className="font-semibold">NeuroFinance Blueprint</span> at the
+            heart of our program, you’ll gain personalized coaching, tailored
+            strategies, and the mental edge that sets successful traders apart.
+            Achieve consistent returns with direct mentorship from industry
+            experts, and let the NeuroFinance Blueprint transform the way you
+            think and trade.
           </p>
+          <span className="font-bold text-center text-[1.2rem] sm:text-[1.4rem] block m-0">
+            Your success story starts here.
+          </span>
+          <span className="font-medium">We offer 2 Programmes:</span>
+          <br />
+          • ACT Mastery
+          <br />• ACT Yodha
         </div>
 
         {/* Video */}
@@ -107,11 +137,20 @@ const Mentorship = () => {
         <div className="w-[90%] sm:w-[70%] mt-8 mb-4 text-left text-gray-800 text-[1rem] sm:text-[1.1rem] leading-relaxed">
           <h3 className="text-2xl sm:text-4xl font-bold">ACT Mastery</h3>
           <p className="mt-3 text-gray-800 leading-relaxed text-[1.1rem] sm:text-[1.3rem]">
-            Dive into the stock market with our exclusive 1-to-1{" "}
-            <span className="text-black font-medium">personalized</span>{" "}
-            program, tailored for <em>beginners</em> aiming to carve out a
-            successful career in the stock market.
+            Dive into the stock market with our exclusive 1-to-1 personalized
+            program, tailored for beginners aiming to carve out a successful
+            career in the stock market. You’ll be paired one-on-one with a
+            senior market expert who will build your trading skills from the
+            ground up.
+            <br />
+            <br />
+            As a TMI 1:1 member, you receive our highest level of support,
+            including the powerful{" "}
+            <span className="font-semibold">NeuroFinance Blueprint</span> to
+            help you master not just the mechanics of trading, but the mindset
+            behind it.
           </p>
+
           <p className="mt-2 font-medium text-gray-900 text-[1.1rem] sm:text-[1.3rem]">
             This Program is Exclusively for Determined Beginners and Serious
             Investors.
@@ -121,31 +160,36 @@ const Mentorship = () => {
             Key Features:
           </h4>
           <ul className="mt-2 space-y-2 text-gray-700 list-disc pl-6 text-[1.1rem] sm:text-[1.3rem]">
+            <li>Personalized goal setting.</li>
             <li>
-              {" "}
-              As a TMI 1:1 member, you receive our highest level of support.{" "}
-            </li>{" "}
-            <li>Personalized goal setting.</li>{" "}
+              Step-by-step learning modules from market basics to advanced
+              concepts (Smart Money Concepts).
+            </li>
+            <li>Live Q/A sessions and live support for trades.</li>
             <li>
-              {" "}
-              Step-by-step learning modules on market basics to Advanced
-              concepts (Smart money concepts).{" "}
-            </li>{" "}
-            <li>Live Q/A Sessions.</li> <li>Live Support for trades.</li>{" "}
-            <li>Risk Management & Position Sizing Techniques.</li>{" "}
-            <li>Mastering Trading psychology.</li>{" "}
-            <li>Weekend/ Weekday batches for your convenience.</li>{" "}
+              Risk management, position sizing techniques, and mastering trading
+              psychology using the NeuroFinance Blueprint.
+            </li>
+            <li>Weekend/Weekday batches for your convenience.</li>
             <li>
-              {" "}
-              Building confidence and skills for a successful trading journey.{" "}
-            </li>{" "}
-            <li>Making you a successful trader in 3 months.</li>
+              Building confidence and skills for a successful trading journey,
+              making you a successful trader in 3 months.
+            </li>
           </ul>
         </div>
       </div>
 
       {/* CTA */}
       <div className="text-center py-3 flex flex-col gap-2 items-center">
+        <div className="w-[90%] sm:w-[70%] mx-auto mt-6 text-gray-700 text-[1rem] sm:text-[1.2rem] leading-relaxed">
+          <p className="font-medium">
+            By incorporating the NeuroFinance Blueprint, we ensure that you’re
+            not only equipped with technical skills, but also the mental
+            resilience needed to thrive. Let’s start your success story
+            together!
+          </p>
+        </div>
+
         <p className="max-w-4xl mx-auto text-xl sm:text-2xl text-gray-700 mt-6 text-center px-4">
           To Know more talk to our team
         </p>
@@ -163,9 +207,13 @@ const Mentorship = () => {
         <div className="w-[90%] sm:w-[70%] mt-8 mb-4 text-left text-gray-800 text-[1rem] sm:text-[1.1rem] leading-relaxed">
           <h3 className="text-2xl sm:text-4xl font-bold">ACT Yodha</h3>
           <p className="mt-3 text-gray-800 leading-relaxed text-[1.1rem] sm:text-[1.3rem]">
-            This program is curated for frustrated traders who are active in the
-            battle of stock market for years but haven't found success and
-            consistency.
+            This program is curated for frustrated traders who have battled the
+            stock market for years without finding consistent success. By
+            focusing on trading psychology and risk management, it empowers you
+            to master your mindset and strategies. With the NeuroFinance
+            Blueprint at the core, you’ll transform the way you think about
+            trading, allowing you to achieve the consistency you've been
+            seeking.
           </p>
           <h4 className="mt-6 text-xl sm:text-2xl font-semibold">
             Key Features:
@@ -199,6 +247,24 @@ const Mentorship = () => {
           </ul>
         </div>
       </div>
+      <ul className="mt-2 space-y-2 text-gray-700 list-disc pl-6 text-[1.1rem] sm:text-[1.3rem]">
+        <li>As a TMI 1:1 member, you receive our highest level of support.</li>
+        <li>Define your trading style (Intraday / Swing / Positional).</li>
+        <li>Assess your capital and the strategies you’ve been following.</li>
+        <li>Build a personalized trading plan from scratch.</li>
+        <li>Master risk management and position sizing.</li>
+        <li>Develop high-probability entry and exit strategies.</li>
+        <li>
+          Most importantly, engage in dedicated daily live video sessions to
+          analyze your trades, discuss market psychology, and refine your
+          strategies using the
+          <span className="font-medium"> NeuroFinance approach</span>.
+        </li>
+        <li>
+          Become a successful, confident trader with consistent returns in 1
+          month.
+        </li>
+      </ul>
 
       {/* CTA for Yodha */}
       <div className="text-center py-3 flex flex-col gap-2 items-center">
