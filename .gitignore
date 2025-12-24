@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+app/__pycache__/
+
+#Environment
+.env
+
+#logs
+.log
+
+# Database
+*.sqlite3
+
+# VS Code settings
+.vscode/

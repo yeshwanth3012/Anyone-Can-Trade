@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks
 from pydantic import BaseModel, EmailStr
 from sqlalchemy.orm import Session
 import hmac
@@ -81,7 +81,9 @@ def create_order(order: OrderRequest, db: Session = Depends(get_db)):
 # -------------------------------
 
 @router.post("/verify-payment")
-def verify_payment(payload: VerifyRequest, db: Session = Depends(get_db)):
+def verify_payment(payload: VerifyRequest, 
+                   background_tasks: BackgroundTasks,
+                   db: Session = Depends(get_db)):
     try:
         # 1️⃣ Generate expected signature
         print('1')
@@ -120,8 +122,8 @@ def verify_payment(payload: VerifyRequest, db: Session = Depends(get_db)):
 
         # 5️⃣ Send confirmation emails
         print(5)
-        send_payment_email_user(payment)
-        send_payment_email_admin(payment)
+        background_tasks.add_task(send_payment_email_user, payment)
+        background_tasks.add_task(send_payment_email_admin, payment)
 
         return {"status": "payment successful"}
 
