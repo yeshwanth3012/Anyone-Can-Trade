@@ -15,8 +15,10 @@ class Settings(BaseSettings):
     SMTP_PASS:str="Askmeon@88"
 
     ADMIN_EMAIL:str = "contact@tradingmastersindia.com"
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        extra="ignore"
+    )
 
 settings = Settings()
 
