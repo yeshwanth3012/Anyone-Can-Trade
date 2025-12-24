@@ -32,9 +32,9 @@ const useRazorpayPayment = () => {
       const options = {
         amount: data.amount,
         currency: data.currency,
-        order_id: data.id,
+        order_id: data.order_id,
         name: "Trading Masters India", 
-        key: "rzp_live_RB5aI7fN7zWVDj",
+        key: "rzp_test_RvN0HGkqSpOSFx",
         prefill: {
           email: form.email,
           contact: form.phoneNumber,
@@ -52,9 +52,9 @@ const useRazorpayPayment = () => {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                paymentId: response.razorpay_payment_id,
-                orderId: response.razorpay_order_id,
-                razorpaySignature: response.razorpay_signature,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_signature: response.razorpay_signature,
                 userEmail:form.email
               }),
             }

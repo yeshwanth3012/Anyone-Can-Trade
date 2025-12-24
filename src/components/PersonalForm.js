@@ -13,11 +13,11 @@ const PersonalForm = () => {
 
   const finalAmount = useMemo(() => {
     if (type === "yodha" || type === "mastery") {
-      return 999;
+      return 999*100;
     } else if (type === "achiever") {
-      return 20000;
+      return 20000*100;
     } else if (type === "pro") {
-      return 36000;
+      return 36000*100;
     }
   }, [type]);
 
