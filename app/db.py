@@ -1,10 +1,12 @@
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
-from app.core.config import settings
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # Example URL:
 # mysql+pymysql://root:your_password@localhost:3306/razorpay_db
-engine = create_engine(settings.database_url, pool_pre_ping=True,  connect_args={"sslmode": "require"})
+engine = create_engine(os.getenv("DATABASE_URL"), pool_pre_ping=True,  connect_args={"sslmode": "require"})
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

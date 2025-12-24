@@ -1,13 +1,15 @@
 import smtplib
 from email.mime.text import MIMEText
 import os
-from app.core.config import settings
+from dotenv import load_dotenv
 
-SMTP_HOST = settings.SMTP_HOST
-SMTP_PORT = int(settings.SMTP_PORT)
-SMTP_USER = settings.SMTP_USER
-SMTP_PASS = settings.SMTP_PASS
-ADMIN_EMAIL = settings.ADMIN_EMAIL
+load_dotenv()
+
+SMTP_HOST = os.getenv("SMTP_HOST")
+SMTP_PORT = int(os.getenv("SMTP_PORT"))
+SMTP_USER = os.getenv("SMTP_USER")
+SMTP_PASS = os.getenv("SMTP_PASS")
+ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")
 
 def send_email(to, subject, body):
     msg = MIMEText(body)

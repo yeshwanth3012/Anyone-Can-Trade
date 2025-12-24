@@ -5,16 +5,18 @@ import hmac
 import hashlib
 import razorpay
 
-from app.core.config import settings
+import os
+from dotenv import load_dotenv
 from app.db import get_db
 from app.models import Payment
 from app.api.email_service import send_payment_email_admin, send_payment_email_user
 
+load_dotenv()
 router = APIRouter(prefix="/api", tags=["Razorpay"])
 
 # ✅ Razorpay client ONLY for order creation
 razorpay_client = razorpay.Client(
-    auth=(settings.razorpay_key_id, settings.razorpay_key_secret)
+    auth=(os.getenv("RAZORPAY_KEY_ID"), os.getenv("RAZORPAY_KEY_SECRET"))
 )
 
 # -------------------------------
@@ -86,7 +88,7 @@ def verify_payment(payload: VerifyRequest, db: Session = Depends(get_db)):
         message = f"{payload.razorpay_order_id}|{payload.razorpay_payment_id}"
 
         generated_signature = hmac.new(
-            settings.razorpay_key_secret.encode(),
+            os.getenv("RAZORPAY_KEY_SECRET").encode(),
             message.encode(),
             hashlib.sha256
         ).hexdigest()
