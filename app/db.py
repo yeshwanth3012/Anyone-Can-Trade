@@ -4,7 +4,7 @@ from app.core.config import settings
 
 # Example URL:
 # mysql+pymysql://root:your_password@localhost:3306/razorpay_db
-engine = create_engine(settings.database_url, pool_pre_ping=True)
+engine = create_engine(settings.database_url, pool_pre_ping=True,  connect_args={"sslmode": "require"})
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
