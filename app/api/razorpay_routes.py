@@ -122,8 +122,10 @@ def verify_payment(payload: VerifyRequest,
 
         # 5️⃣ Send confirmation emails
         print(5)
-        background_tasks.add_task(send_payment_email_user, payment)
-        background_tasks.add_task(send_payment_email_admin, payment)
+        send_payment_email_user(payment)
+        send_payment_email_admin(payment)
+        # background_tasks.add_task(send_payment_email_user, payment)
+        # background_tasks.add_task(send_payment_email_admin, payment)
 
         return {"status": "payment successful"}
 
