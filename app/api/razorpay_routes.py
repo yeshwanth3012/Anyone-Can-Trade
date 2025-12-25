@@ -9,7 +9,7 @@ import os
 from dotenv import load_dotenv
 from app.db import get_db
 from app.models import Payment
-from app.api.email_service import send_payment_email_admin, send_payment_email_user
+from app.api.email_service import send_payment_email_admin, send_payment_email_user, send_email
 
 load_dotenv()
 router = APIRouter(prefix="/api", tags=["Razorpay"])
@@ -134,3 +134,8 @@ def verify_payment(payload: VerifyRequest,
     except Exception as e:
         print("Verification error:", e)
         raise HTTPException(status_code=400, detail="Payment verification failed")
+
+@router.get("/test-mail")
+def test_mail():
+    send_email("saitejagampala@gmail.com", "Test", "Hello from Render")
+    return {"ok": True}

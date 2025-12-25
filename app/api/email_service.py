@@ -17,10 +17,14 @@ def send_email(to, subject, body):
     msg["From"] = SMTP_USER
     msg["To"] = to
 
-    with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
-        server.starttls()
-        server.login(SMTP_USER, SMTP_PASS)
-        server.send_message(msg)
+    try:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=10) as server:
+            server.starttls()
+            server.login(SMTP_USER, SMTP_PASS)
+            server.send_message(msg)
+    except Exception as e:
+        print(f'Email error - timeout -- exc : {e}')
+        raise
 
 def send_payment_email_user(payment):
     body = f"""
