@@ -1,30 +1,24 @@
-import smtplib
-from email.mime.text import MIMEText
 import os
 from dotenv import load_dotenv
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 load_dotenv()
 
-SMTP_HOST = os.getenv("SMTP_HOST")
-SMTP_PORT = int(os.getenv("SMTP_PORT"))
-SMTP_USER = os.getenv("SMTP_USER")
-SMTP_PASS = os.getenv("SMTP_PASS")
-ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")
-
 def send_email(to, subject, body):
-    msg = MIMEText(body)
-    msg["Subject"] = subject
-    msg["From"] = SMTP_USER
-    msg["To"] = to
+    message = Mail(
+        from_email=os.getenv("SMTP_USER"),
+        to_emails=to,
+        subject=subject,
+        plain_text_content=body
+    )
 
     try:
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=10) as server:
-            server.starttls()
-            server.login(SMTP_USER, SMTP_PASS)
-            server.send_message(msg)
-    except Exception as e:
-        print(f'Email error - timeout -- exc : {e}')
-        raise
+        sg = SendGridAPIClient(os.getenv("SENDGRID_API_KEY"))
+        response = sg.send(message)
+        print(response.status_code)
+    except Exception as exc:
+        print(exc)
 
 def send_payment_email_user(payment):
     body = f"""
@@ -49,4 +43,4 @@ def send_payment_email_admin(payment):
     Amount: ₹{payment.amount}
     Order ID: {payment.order_id}
     """
-    send_email(ADMIN_EMAIL, "New Payment Received", body)
+    send_email(os.getenv("ADMIN_EMAIL"), "New Payment Received", body)
