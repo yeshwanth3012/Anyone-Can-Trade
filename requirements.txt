@@ -9,3 +9,4 @@ boto3
 python-dotenv
 sqlalchemy
 pydantic[email]
+sendgrid
