@@ -9,9 +9,10 @@ const useRazorpayPayment = () => {
   const [isVerifying, setIsVerifying] = useState(false);
 
   const triggerPayment = async (form, type, onSuccess) => {
+    console.log(form )
     try {
       // Step 1: Create work order + Razorpay order
-      const res = await fetch("https://api.tradingmastersindia.com/api/create-order", {
+      const res = await fetch("http://localhost:8080/api/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +46,7 @@ const useRazorpayPayment = () => {
           setIsVerifying(true)
           // Step 3: Verify payment with backend
           const verifyRes = await fetch(
-            "https://api.tradingmastersindia.com/api/verify-payment",
+            "http://localhost:8080/api/verify-payment",
             {
               method: "POST",
               headers: {
@@ -61,15 +62,16 @@ const useRazorpayPayment = () => {
           );
 
           const finalRes = await verifyRes.json();
+          console.log(finalRes)
 
           if (finalRes.status !== "failure") {
             if (type === "mastery") {
               navigate("/trading-form/mastery", {
-                state: { paymentId: data.paymentId, courseType: type },
+                state: { paymentId: finalRes.paymentId, courseType: type },
               });
             } else if( type === "yodha") {
               navigate("/trading-form/yodha", {
-                state: { paymentId: data.paymentId, courseType: type },
+                state: { paymentId: finalRes.paymentId, courseType: type },
               });
             }else{
               onSuccess("success")

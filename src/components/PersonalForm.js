@@ -25,7 +25,7 @@ const PersonalForm = () => {
     name: "",
     age: "",
     email: "",
-    phoneNumber: "",
+    phone: "",
     currency: "INR",
     amount: finalAmount,
     courseType: type.toUpperCase(),
@@ -52,10 +52,10 @@ const PersonalForm = () => {
       newErrors.email = "Enter a valid email address.";
     }
 
-    if (!form.phoneNumber) {
-      newErrors.phoneNumber = "Phone number is required.";
-    } else if (!/^\d{10}$/.test(form.phoneNumber)) {
-      newErrors.phoneNumber = "Phone number must be 10 digits.";
+    if (!form.phone) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(form.phone)) {
+      newErrors.phone = "Phone number must be 10 digits.";
     }
 
     setErrors(newErrors);
@@ -86,7 +86,7 @@ const PersonalForm = () => {
       }
     }
 
-    if (name === "phoneNumber") {
+    if (name === "phone") {
       // Remove all non-digit characters
       const digitsOnly = value.replace(/\D/g, "");
       setForm((prev) => ({ ...prev, [name]: digitsOnly }));
@@ -201,14 +201,14 @@ const PersonalForm = () => {
             <div className="sm:w-[69%] w-full">
               <input
                 type="tel"
-                name="phoneNumber"
-                value={form.phoneNumber}
+                name="phone"
+                value={form.phone}
                 onChange={handleChange}
                 maxLength={10}
                 className="w-full sm:w-[100%] bg-gray-200 rounded-md px-4 py-2 focus:outline-none"
               />
-              {errors.phoneNumber && (
-                <p className="text-red-500 text-sm">{errors.phoneNumber}</p>
+              {errors.phone && (
+                <p className="text-red-500 text-sm">{errors.phone}</p>
               )}
             </div>
           </div>
@@ -226,7 +226,7 @@ const PersonalForm = () => {
           onClick={handleSubmit}
           className={`text-[#000000] px-24 py-3 rounded-full font-medium text-[1.2rem] transition hover:shadow-lg hover:scale-[1.02]`}
         >
-          Pay {finalAmount}/-
+          Pay {finalAmount/100}/-
         </button>
         {isVerifying && (
           <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">

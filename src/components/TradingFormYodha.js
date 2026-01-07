@@ -4,7 +4,6 @@ import PaymentSuccessOverlay from "./PaymentSuccessOverlay";
 
 const TradingFormYodha = ({form}) => {
   const location = useLocation();
-  console.log("yoForm",form)
   const { paymentId, courseType } = location.state || {}; 
   const [showOverlay, setShowOverlay] = useState(false);
   const [status, setStatus] = useState("")
@@ -46,20 +45,15 @@ const handleSubmit = async () => {
     return;
   }
 
-  const payload = {
-    paymentId: paymentId,
-    courseType: courseType,
-    formData: JSON.stringify(yodhaForm) // stringify form object
-  };
-
   try {
-    const response = await fetch("https://api.tradingmastersindia.com/api/save", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json" // Sending JSON
-      },
-      body: JSON.stringify(payload)
-    });
+    const response = await fetch("http://localhost:8080/api/save-user-qa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          paymentId: paymentId,
+          answers: JSON.stringify(yodhaForm),
+        }),
+      });
 
     if (!response.ok) {
       throw new Error("Failed to submit form");

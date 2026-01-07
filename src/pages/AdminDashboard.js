@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 useEffect(() => {
   const fetchUsers = async () => {
     try {
-      const response = await fetch("https://api.tradingmastersindia.com/api");
+      const response = await fetch("http://localhost:8080/api/payments");
       if (!response.ok) throw new Error("Failed to fetch user data");
 
       const data = await response.json();
@@ -84,8 +84,6 @@ const filteredUsers = users.filter((user) => {
   return valid;
 });
 
-console.log("filteredUsers", filteredUsers, "users", users)
-
   // Pagination
   const totalPages = Math.ceil(filteredUsers.length / usersPerPage);
   const startIndex = (currentPage - 1) * usersPerPage;
@@ -133,28 +131,6 @@ console.log("filteredUsers", filteredUsers, "users", users)
             </select>
           </div>
 
-          {/* Age Filter */}
-          <div className="flex flex-col">
-            <label className="text-sm font-semibold">Age Filter</label>
-            <div className="flex gap-2">
-              <select
-                value={ageOperator}
-                onChange={(e) => setAgeOperator(e.target.value)}
-                className="border p-2 rounded"
-              >
-                <option value="greater">Greater than</option>
-                <option value="less">Less than</option>
-                <option value="equal">Equal</option>
-              </select>
-              <input
-                type="number"
-                value={ageValue}
-                onChange={(e) => setAgeValue(e.target.value)}
-                placeholder="Age"
-                className="border p-2 rounded w-24"
-              />
-            </div>
-          </div>
 
           {/* Date Range */}
           <div className="flex flex-col">
@@ -218,9 +194,7 @@ console.log("filteredUsers", filteredUsers, "users", users)
                     <p className="sm:w-[37%]">
                       <span className="font-semibold">Email:</span> {user.email}
                     </p>
-                    <p className="sm:w-[30%]">
-                      <span className="font-semibold">Age:</span> {user.age}
-                    </p>
+                 
                     <p className="sm:w-[30%]">
                       <span className="font-semibold">Mobile:</span>{" "}
                       {user.phoneNumber}
@@ -244,8 +218,8 @@ console.log("filteredUsers", filteredUsers, "users", users)
 
                 {/* Form */}
                 {user.courseType === "YODHA" &&
-                  (user?.form ? (
-                    <TradingFormYodha form={user?.form?.formData} />
+                  (user?.user_qa ? (
+                    <TradingFormYodha form={user?.user_qa} />
                   ) : (
                     <p className="text-center font-bold">
                       User has not submitted the form.
@@ -253,8 +227,8 @@ console.log("filteredUsers", filteredUsers, "users", users)
                   ))}
 
                 {user.courseType === "MASTERY" &&
-                  (user?.form ? (
-                    <TradingForm form={user?.form?.formData} />
+                  (user?.user_qa ? (
+                    <TradingForm form={user?.user_qa} />
                   ) : (
                     <p className="text-center font-bold">
                       User has not submitted the form.
