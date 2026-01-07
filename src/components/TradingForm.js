@@ -45,7 +45,7 @@ const TradingForm = ({ form }) => {
     console.log(masteryForm);
 
     try {
-      const response = await fetch("http://localhost:8080/api/save-user-qa", {
+      const response = await fetch("https://api.tradingmastersindia.com//api/save-user-qa", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

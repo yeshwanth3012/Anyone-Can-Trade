@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 useEffect(() => {
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/payments");
+      const response = await fetch("https://api.tradingmastersindia.com//api/payments");
       if (!response.ok) throw new Error("Failed to fetch user data");
 
       const data = await response.json();

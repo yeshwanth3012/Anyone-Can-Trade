@@ -12,7 +12,7 @@ const useRazorpayPayment = () => {
     console.log(form )
     try {
       // Step 1: Create work order + Razorpay order
-      const res = await fetch("http://localhost:8080/api/create-order", {
+      const res = await fetch("https://api.tradingmastersindia.com//api/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const useRazorpayPayment = () => {
           setIsVerifying(true)
           // Step 3: Verify payment with backend
           const verifyRes = await fetch(
-            "http://localhost:8080/api/verify-payment",
+            "https://api.tradingmastersindia.com//api/verify-payment",
             {
               method: "POST",
               headers: {
