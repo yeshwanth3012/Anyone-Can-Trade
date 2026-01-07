@@ -3,19 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.payments import router as payments_router
 from app.api.health import router as health_router
 from app.api.razorpay_routes import router as razorpay_router
-from sqlalchemy import text
 from app.db import Base, engine
 from app.models import Payment
 
 # Create DB tables (dev-friendly). In production, prefer Alembic migrations.
 Base.metadata.create_all(bind=engine)
-
-# Dev-friendly "mini migration" so existing DBs get the new column.
-# (SQLAlchemy create_all() does NOT add new columns to existing tables.)
-with engine.begin() as conn:
-    conn.execute(
-        text("ALTER TABLE payments ADD COLUMN IF NOT EXISTS user_qa JSONB")
-    )
 
 app = FastAPI(title="TradingMastersIndia Payment Service", version="1.0.0")
 

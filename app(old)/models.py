@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime
-from sqlalchemy.dialects.postgresql import JSONB
 from datetime import datetime
 from app.db import Base
 
@@ -22,9 +21,6 @@ class Payment(Base):
     # Razorpay details
     payment_id = Column(String, nullable=True)
     signature = Column(String, nullable=True)
-
-    # User Q&A (JSON)
-    user_qa = Column(JSONB, nullable=True)
 
     status = Column(String, default="PENDING")  # PENDING / SUCCESS / FAILED
     created_at = Column(DateTime, default=datetime.utcnow)

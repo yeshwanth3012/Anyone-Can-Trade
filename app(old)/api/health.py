@@ -1,12 +1,14 @@
 from fastapi import APIRouter, Depends
+from sqlalchemy import text
 from sqlalchemy.orm import Session
 from app.db import get_db
 from app import schemas
 from app.crud import get_all_payments
 
-router = APIRouter()
+router = APIRouter(prefix="/health", tags=["Health"])
 
-@router.get("", response_model=list[schemas.PaymentOut])
+@router.get("/db")
 def list_payments(db: Session = Depends(get_db)):
     # Equivalent to Spring: GET /api/payments
-    return get_all_payments(db)
+    db.execute(text("SELECT 1"))
+    return {"status": "db connected"}

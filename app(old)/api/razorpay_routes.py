@@ -5,10 +5,6 @@ import hmac
 import hashlib
 import razorpay
 
-# ---- Dynamic User Q&A Save API ----
-from typing import Any, Dict, Union
-import json
-from fastapi import HTTPException
 import os
 from dotenv import load_dotenv
 from app.db import get_db
@@ -41,8 +37,6 @@ class VerifyRequest(BaseModel):
     razorpay_payment_id: str
     razorpay_signature: str
     userEmail: EmailStr
-
-
 
 
 # -------------------------------
@@ -142,58 +136,7 @@ def verify_payment(payload: VerifyRequest,
         print("Verification error:", e)
         raise HTTPException(status_code=400, detail="Payment verification failed")
 
-
-# -------------------------------
-# Save User Q&A by paymentId
-# -------------------------------
-
-
-
 @router.get("/test-mail")
 def test_mail():
-    send_email(
-    "saitejagampala@gmail.com",
-    "Test Email",
-    html_body="""
-    <html>
-      <body>
-        <h2>Hello from Render 🚀</h2>
-        <p>This is a <b>test HTML email</b>.</p>
-      </body>
-    </html>
-    """,
-    text_body="Hello from Render"
-)
+    send_email("saitejagampala@gmail.com", "Test", "Hello from Render")
     return {"ok": True}
-
-
-class SaveUserQARequest(BaseModel):
-    paymentId: str
-    answers: Union[Dict[str, Any], str]
-
-def _normalize_answers(answers):
-    if isinstance(answers, dict):
-        return answers
-    if isinstance(answers, str):
-        try:
-            parsed = json.loads(answers)
-            if not isinstance(parsed, dict):
-                raise ValueError()
-            return parsed
-        except Exception:
-            raise HTTPException(status_code=400, detail="answers must be valid JSON")
-    raise HTTPException(status_code=400, detail="Invalid answers format")
-
-@router.post("/save-user-qa")
-def save_user_qa(payload: SaveUserQARequest, db: Session = Depends(get_db)):
-    answers_dict = _normalize_answers(payload.answers)
-
-    payment = db.query(Payment).filter(Payment.payment_id == payload.paymentId).first()
-    if not payment:
-        raise HTTPException(status_code=404, detail="Payment not found")
-
-    payment.user_qa = {**(payment.user_qa or {}), **answers_dict}
-    db.commit()
-    db.refresh(payment)
-
-    return {"message": "User Q&A saved", "paymentId": payload.paymentId, "user_qa": payment.user_qa}

@@ -1,13 +1,31 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
+from datetime import datetime
+from typing import Any, Optional
 
-class PaymentBase(BaseModel):
-    razorpay_order_id: str
-    user_id: str
-    amount: int
+
+class PaymentOut(BaseModel):
+    id: int
+
+    # User details
+    name: str
+    email: EmailStr
+    phone: Optional[str] = None
+
+    # Order details
+    order_id: str
+    courseType: str
+    amount: float
+    currency: str
+
+    # Razorpay details
+    payment_id: Optional[str] = None
+    signature: Optional[str] = None
+
     status: str
+    created_at: datetime
 
-class Payment(PaymentBase):
-    razorpay_payment_id: str
+    # User Q&A
+    user_qa: Optional[dict[str, Any]] = None
 
     class Config:
         from_attributes = True

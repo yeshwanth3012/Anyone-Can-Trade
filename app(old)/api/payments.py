@@ -6,7 +6,7 @@ from app.crud import get_all_payments
 
 router = APIRouter()
 
-@router.get("", response_model=list[schemas.PaymentOut])
+@router.get("", response_model=list[schemas.Payment])
 def list_payments(db: Session = Depends(get_db)):
     # Equivalent to Spring: GET /api/payments
     return get_all_payments(db)
