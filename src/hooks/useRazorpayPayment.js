@@ -35,7 +35,7 @@ const useRazorpayPayment = () => {
         currency: data.currency,
         order_id: data.order_id,
         name: "Trading Masters India", 
-        key: "rzp_test_RvN0HGkqSpOSFx",
+        key: "rzp_live_S1GTfGWcmpPyhg",
         prefill: {
           email: form.email,
           contact: form.phoneNumber,
