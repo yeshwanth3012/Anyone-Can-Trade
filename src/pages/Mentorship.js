@@ -247,24 +247,6 @@ const Mentorship = () => {
           </ul>
         </div>
       </div>
-      <ul className="mt-2 space-y-2 text-gray-700 list-disc pl-6 text-[1.1rem] sm:text-[1.3rem]">
-        <li>As a TMI 1:1 member, you receive our highest level of support.</li>
-        <li>Define your trading style (Intraday / Swing / Positional).</li>
-        <li>Assess your capital and the strategies you’ve been following.</li>
-        <li>Build a personalized trading plan from scratch.</li>
-        <li>Master risk management and position sizing.</li>
-        <li>Develop high-probability entry and exit strategies.</li>
-        <li>
-          Most importantly, engage in dedicated daily live video sessions to
-          analyze your trades, discuss market psychology, and refine your
-          strategies using the
-          <span className="font-medium"> NeuroFinance approach</span>.
-        </li>
-        <li>
-          Become a successful, confident trader with consistent returns in 1
-          month.
-        </li>
-      </ul>
 
       {/* CTA for Yodha */}
       <div className="text-center py-3 flex flex-col gap-2 items-center">
