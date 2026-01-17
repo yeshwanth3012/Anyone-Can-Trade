@@ -87,7 +87,7 @@ def send_contact_email_admin(data):
     html = (
         html.replace("{{name}}", data.name)
             .replace("{{email}}", data.email)
-            .replace("{{phone}}", data.phone)
+            .replace("{{phone}}", data.phoneNumber)
             .replace("{{age}}", data.age)
     )
 

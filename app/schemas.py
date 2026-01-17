@@ -33,5 +33,5 @@ class PaymentOut(BaseModel):
 class ContactUsRequest(BaseModel):
     name: str
     email: EmailStr
-    phone: str
+    phoneNumber: str
     age: str
