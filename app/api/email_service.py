@@ -80,3 +80,19 @@ def send_payment_email_admin(payment):
         "New Payment Received",
         html
     )
+
+def send_contact_email_admin(data):
+    html = load_html_template("contact_us_mail_to_admin.html")
+
+    html = (
+        html.replace("{{name}}", data.name)
+            .replace("{{email}}", data.email)
+            .replace("{{phone}}", data.phone)
+            .replace("{{age}}", data.age)
+    )
+
+    send_email(
+        os.getenv("ADMIN_EMAIL"),
+        "New Contact Us Interest",
+        html
+    )

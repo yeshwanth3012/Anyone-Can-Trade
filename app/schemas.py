@@ -29,3 +29,9 @@ class PaymentOut(BaseModel):
 
     class Config:
         from_attributes = True
+
+class ContactUsRequest(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    age: str

@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.payments import router as payments_router
 from app.api.health import router as health_router
 from app.api.razorpay_routes import router as razorpay_router
+from app.api.contact import router as contact_router
 from sqlalchemy import text
 from app.db import Base, engine
 from app.models import Payment
@@ -30,3 +31,4 @@ app.add_middleware(
 app.include_router(payments_router, prefix="/api/payments", tags=["payments"])
 app.include_router(health_router)
 app.include_router(razorpay_router)
+app.include_router(contact_router)
