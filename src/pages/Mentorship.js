@@ -120,16 +120,19 @@ const Mentorship = () => {
         <p className="max-w-3xl mx-auto text-gray-700 mt-2 text-center px-4 font-medium text-[1rem] sm:text-[1.3rem]">
           Please watch this video for clear understanding of our Programmes
         </p>
-        <div className="w-[90%] sm:w-[70%] bg-black rounded-md overflow-hidden">
-          <video
-            className="w-full h-[200px] sm:h-[300px] object-cover"
-            controls
-            preload="metadata"
-          >
-            <source src="/videos/stock-market.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+      <div className='w-[90%] sm:w-[70%] md:w-[65%] bg-black rounded-md overflow-hidden mt-3'>
+        <video
+          className="w-full h-[500px] object-cover"
+          controls
+          preload="metadata"
+        >
+          <source
+            src="https://res.cloudinary.com/dxaqwyerl/video/upload/v1769155817/one_on_one_1_ta5quw.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       </div>
 
       {/* ACT Mastery Section */}
