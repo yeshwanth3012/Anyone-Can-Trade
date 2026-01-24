@@ -125,19 +125,22 @@ const Courses = () => {
           Please watch this video for a clear understanding of our course
         </h2>
 
-        <div className='w-[90%] sm:w-[70%] md:w-[65%] bg-black rounded-md overflow-hidden mt-3'>
-        <video
-          className="w-full h-[500px] object-cover"
-          controls
-          preload="metadata"
-        >
-          <source
-            src="https://res.cloudinary.com/dxaqwyerl/video/upload/v1769156670/courses_m_1_1_rfbtjm.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+        <div className="w-[95%] sm:w-[80%] md:w-[65%] bg-black rounded-md overflow-hidden mt-4 aspect-video">
+          <video
+            className="w-full h-full"
+            controls
+            preload="metadata"
+            playsInline
+            controlsList="nodownload"
+            poster="https://res.cloudinary.com/dxaqwyerl/video/upload/f_jpg,q_auto/v1769156670/courses_m_1_1_rfbtjm"
+          >
+            <source
+              src="https://res.cloudinary.com/dxaqwyerl/video/upload/f_auto,q_auto/v1769156670/courses_m_1_1_rfbtjm"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
         {/* <div className="w-[320px] sm:w-[900px] h-[200px] sm:h-[400px] rounded-md overflow-hidden">
           <video
